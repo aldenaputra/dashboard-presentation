@@ -1,0 +1,10 @@
+Guide Step by Step untuk Run App Streamlit
+1. Dijalankan di atas OS Windows, MacOS, Linux
+2. Pastikan koneksi internet tersedia untuk mengunduh library yang diperlukan
+3. Pastikan Python/Python3 terinstall (3.10-3.12)
+4. Buka VS Code/CMD di direktori "app.py" berada
+5. Jalankan `pip install -r requirements.txt`
+6. Jalankan `streamlit run app.py` jika Python ada di PATH, jika tidak maka jalankan `python -m streamlit run app.py`
+7. Aplikasi akan membuka secara otomatis di browser default
+8. Jika tidak membuka, lihat URL yang ditampilkan di terminal (biasanya http://localhost:8501)
+9. Untuk menghentikan aplikasi, tekan Ctrl+C di Command Prompt/Terminal
