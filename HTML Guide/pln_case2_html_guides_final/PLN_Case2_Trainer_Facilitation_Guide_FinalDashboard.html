@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trainer Guide - Case #2 SPKLU Final Dashboard</title>
+  <style>
+    :root{--pln-blue:#0b4f93;--pln-blue-2:#073864;--pln-cyan:#00a3e0;--pln-yellow:#ffd100;--ink:#172033;--muted:#667085;--bg:#f5f7fb;--card:#fff;--line:#d9e2ef;--soft-blue:#eaf4ff;--soft-yellow:#fff7d1;--soft-green:#e9f8ef;--soft-red:#fff0f0;--soft-purple:#f3efff;--shadow:0 10px 25px rgba(16,24,40,.08);--radius:18px}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}.hero{background:linear-gradient(135deg,var(--pln-blue),var(--pln-blue-2) 66%,#072a4a);color:#fff;padding:44px 52px;border-bottom:7px solid var(--pln-yellow)}.hero .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;opacity:.9;font-weight:700}.hero h1{margin:12px 0 10px;font-size:34px;line-height:1.18;max-width:1160px}.hero p{max-width:1020px;font-size:16px;opacity:.94;margin:0}.toolbar{position:sticky;top:0;z-index:10;background:rgba(245,247,251,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(217,226,239,.85)}.toolbar-inner{max-width:1220px;margin:0 auto;padding:12px 24px;display:flex;gap:10px;flex-wrap:wrap}button,.pill-link{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 14px;color:var(--ink);font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 2px 7px rgba(16,24,40,.05)}button.primary{background:var(--pln-blue);color:#fff;border-color:var(--pln-blue)}.wrap{max-width:1220px;margin:0 auto;padding:28px 24px 70px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-6{grid-column:span 6}.span-4{grid-column:span 4}h2{color:var(--pln-blue);margin:4px 0 14px;font-size:24px}h3{margin:20px 0 10px;font-size:18px;color:#123b63}h4{margin:16px 0 8px;font-size:15px;color:#1d4f7b}p{margin:8px 0 12px}.small{color:var(--muted);font-size:13px}.tag{display:inline-block;border-radius:999px;padding:4px 10px;background:var(--soft-blue);color:#074b86;font-weight:700;font-size:12px;margin:0 4px 6px 0}.tag.yellow{background:var(--soft-yellow);color:#694b00}.tag.green{background:var(--soft-green);color:#087443}.tag.red{background:var(--soft-red);color:#9f1b1b}.tag.purple{background:var(--soft-purple);color:#53389e}table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:14px}th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top}th{background:#edf5ff;color:#123b63;text-align:left}tr:nth-child(even) td{background:#fafcff}.callout{border-left:5px solid var(--pln-cyan);background:#eef9ff;padding:14px 16px;border-radius:12px;margin:14px 0}.callout.warning{border-left-color:var(--pln-yellow);background:#fff9df}.callout.answer{border-left-color:#12b76a;background:#effcf5}.callout.red{border-left-color:#f04438;background:#fff4f4}.page-block{border-top:6px solid var(--pln-blue)}.shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;margin:14px 0}.shot img{display:block;width:100%;height:auto}.shot .caption{padding:9px 12px;color:var(--muted);font-size:12px;background:#fbfdff;border-top:1px solid var(--line)}.cheat{background:#0b315c;color:#fff;border-color:#0b315c}.cheat h2,.cheat h3{color:#fff}.cheat table th{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.25)}.cheat table td{border-color:rgba(255,255,255,.25);background:transparent}.footer{color:var(--muted);font-size:12px;text-align:center;margin-top:34px}@media(max-width:850px){.span-8,.span-6,.span-4{grid-column:span 12}.hero{padding:34px 24px}.hero h1{font-size:26px}}@media print{.toolbar{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}.hero{padding:26px 34px}.wrap{padding:20px 10px}.shot{break-inside:avoid}.cheat{color:#000;background:#fff;border-color:var(--line)}.cheat h2,.cheat h3{color:var(--pln-blue)}.cheat table th{background:#edf5ff;color:#123b63;border-color:var(--line)}.cheat table td{border-color:var(--line)}}
+  </style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">Trainer Facilitation & Answer Key · Final Dashboard Version · PLN BI Training</div>
+  <h1>Studi Kasus #2 — Bisnis SPKLU: Rendahnya Profitabilitas dan Kontribusi terhadap Pendapatan</h1>
+  <p>Runbook demo trainer berdasarkan dashboard Power BI final: click path, expected insight, angka validasi, kunci jawaban, dan catatan khusus Page 4 regulatory-adjusted what-if.</p>
+</header>
+<div class="toolbar"><div class="toolbar-inner"><button class="primary" onclick="window.print()">Cetak / Simpan PDF</button><a class="pill-link" href="#page1">Page 1</a><a class="pill-link" href="#page2">Page 2</a><a class="pill-link" href="#page3">Page 3</a><a class="pill-link" href="#page4">Page 4</a><a class="pill-link" href="#cheatsheet">Cheat Sheet</a><a class="pill-link" href="#answer-key">Kunci Akhir</a></div></div>
+<main class="wrap">
+  <section class="grid">
+    <div class="card span-8">
+      <h2>1. Tujuan Fasilitasi</h2>
+      <p>Trainer perlu menunjukkan bahwa dashboard ini bukan sekadar monitoring SPKLU, tetapi <strong>alat diagnosis portofolio bisnis</strong>. Peserta diarahkan melihat bahwa revenue, transaksi, dan traffic belum cukup untuk menyimpulkan kelayakan bisnis.</p>
+      <div class="callout answer"><strong>Pesan utama:</strong> strategi SPKLU yang paling rasional adalah menggeser portofolio menuju lokasi dengan demand lebih pasti dan model partnership yang menekan capex/opex exposure, lalu menguji kembali hasilnya pada regulatory-adjusted view.</div>
+    </div>
+    <div class="card span-4">
+      <h2>Struktur Demo</h2>
+      <span class="tag">Revenue vs Profit</span><span class="tag yellow">Utilization</span><span class="tag green">Partnership</span><span class="tag red">Regulatory Impact</span><span class="tag purple">Parameter What-if</span>
+      <p class="small">Dashboard final terdiri dari 4 page: Executive Overview, Location & Utilization, Business Model & Partnership, dan What-if Analysis.</p>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>2. Storyline Utama yang Harus Terbentuk</h2>
+    <table><thead><tr><th>Tahap</th><th>Dashboard Page</th><th>Pertanyaan Trainer</th><th>Kesimpulan yang Diharapkan</th></tr></thead><tbody>
+      <tr><td>1</td><td>Executive Profitability Overview</td><td>Apakah SPKLU sudah menghasilkan profit atau baru menghasilkan revenue?</td><td>Revenue ada, tetapi profit portofolio 2025 masih negatif.</td></tr>
+      <tr><td>2</td><td>Location & Utilization</td><td>Apakah lokasi ramai selalu profitable?</td><td>Tidak. Rest area punya revenue/traffic, tetapi cost structure berat; fleet depot lebih sehat karena captive demand.</td></tr>
+      <tr><td>3</td><td>Business Model & Partnership</td><td>Mengapa swasta tetap ekspansi?</td><td>Swasta bisa bermain melalui asset-light, captive fleet, site-host, dan bundling ekosistem, bukan hanya charging fee langsung.</td></tr>
+      <tr><td>4</td><td>What-if Analysis</td><td>Apakah strategi komersial tetap layak setelah regulasi dihitung?</td><td>Commercial upside bisa turun setelah tariff/service cap, compliance cost, technology requirement, delay, dan partnership restriction.</td></tr>
+    </tbody></table>
+  </section>
+
+  <section class="card page-block" id="page1" style="margin-top:18px;">
+    <h2>Page 1 — Executive Profitability Overview</h2>
+    <div class="shot"><img src="assets/page1_executive_overview.png" alt="Screenshot Page 1"><div class="caption">Final dashboard Page 1: KPI portfolio, trend revenue vs profit, profit by category/location, dan profitability status.</div></div>
+    <h3>Tujuan Trainer</h3><p>Membuka diskusi bahwa SPKLU tidak cukup dibaca dari revenue. Portfolio sudah punya aktivitas bisnis, tetapi unit economics masih lemah.</p>
+    <h3>Angka Validasi yang Terlihat</h3>
+    <table><thead><tr><th>Indikator</th><th>Nilai pada Dashboard</th><th>Makna</th></tr></thead><tbody>
+      <tr><td>PLN Revenue 2025</td><td>± Rp8,54 miliar</td><td>Revenue sudah terbentuk; bisnis tidak nol aktivitas.</td></tr>
+      <tr><td>PLN Profit 2025</td><td>± -Rp1,43 miliar</td><td>Portfolio masih rugi secara tahunan.</td></tr>
+      <tr><td>Profit Margin PLN</td><td>± -16,70%</td><td>Revenue belum cukup menutup cost structure.</td></tr>
+      <tr><td>Profitable Sites</td><td>7 site</td><td>Minoritas site sudah sehat secara profit.</td></tr>
+      <tr><td>Loss Making Sites</td><td>17 site</td><td>Mayoritas site belum profitable jika dihitung direct profit.</td></tr>
+      <tr><td>Profitability Status Donut</td><td>Near Break-even 19, Loss Making 3, Profitable 2</td><td>Klasifikasi status menunjukkan banyak site masih dekat ambang break-even; berbeda dari direct profitable/loss-making card.</td></tr>
+    </tbody></table>
+    <h3>Click Path & Kunci Jawaban</h3>
+    <table><thead><tr><th>Langkah</th><th>Aksi Demo</th><th>Pertanyaan Pemantik</th><th>Expected Finding</th><th>Implikasi</th></tr></thead><tbody>
+      <tr><td>1</td><td>Buka Page 1 dengan tahun 2025, seluruh region dan kategori.</td><td>Apakah SPKLU sudah memberi kontribusi profit?</td><td>Revenue Rp8,54 miliar tetapi profit -Rp1,43 miliar.</td><td>Masalahnya bukan tidak ada revenue, tetapi margin dan unit economics.</td></tr>
+      <tr><td>2</td><td>Tunjukkan card Profit Margin.</td><td>Apakah revenue cukup untuk menutup cost?</td><td>Margin -16,70%.</td><td>Portfolio belum commercially viable.</td></tr>
+      <tr><td>3</td><td>Tunjukkan Revenue vs Profit Trend.</td><td>Apakah revenue dan profit bergerak searah?</td><td>Revenue berada di area positif, profit tetap negatif.</td><td>Revenue growth belum otomatis memperbaiki profit.</td></tr>
+      <tr><td>4</td><td>Klik/lihat kategori Fleet Depot dan Airport/Station.</td><td>Kategori mana yang terlihat lebih sehat?</td><td>Fleet Depot paling positif; Airport/Station positif kecil.</td><td>Demand yang lebih pasti dan lokasi strategis dapat membantu profit.</td></tr>
+      <tr><td>5</td><td>Klik/lihat Rest Area, Office, Public Parking.</td><td>Kategori mana yang menekan portfolio?</td><td>Rest Area paling negatif, disusul Office/Public Parking.</td><td>Traffic/coverage site belum tentu layak jika cost structure berat.</td></tr>
+    </tbody></table>
+    <div class="callout answer"><strong>Kesimpulan Page 1:</strong> SPKLU sudah menghasilkan revenue, tetapi masih rugi secara portofolio. Investigasi harus masuk ke lokasi, utilisasi, cost, dan model partnership.</div>
+  </section>
+
+  <section class="card page-block" id="page2" style="margin-top:18px;">
+    <h2>Page 2 — Location & Utilization</h2>
+    <div class="shot"><img src="assets/page2_location_utilization.png" alt="Screenshot Page 2"><div class="caption">Final dashboard Page 2: utilization vs profit scatter, revenue vs profit by category, detail lokasi, dan competitor count.</div></div>
+    <h3>Tujuan Trainer</h3><p>Menunjukkan bahwa utilisasi penting, tetapi <strong>tidak cukup</strong>. Profit juga dipengaruhi tipe lokasi, charger, capex/opex, dan model partnership.</p>
+    <h3>Angka Validasi yang Terlihat</h3>
+    <table><thead><tr><th>Indikator / Kategori</th><th>Nilai</th><th>Makna</th></tr></thead><tbody>
+      <tr><td>Avg Utilization</td><td>± 23,09%</td><td>Utilisasi portofolio masih menengah-rendah.</td></tr>
+      <tr><td>Avg Site Uptime</td><td>± 96,00%</td><td>Masalah utama bukan seluruhnya availability; lebih ke demand/cost/model.</td></tr>
+      <tr><td>Avg Payback</td><td>± 77,82 tahun</td><td>Payback rata-rata sangat panjang karena banyak site belum viable.</td></tr>
+      <tr><td>Fleet Depot</td><td>Profit ± Rp746,4 juta; utilization ± 48,6%</td><td>Contoh site type paling sehat karena captive demand.</td></tr>
+      <tr><td>Airport/Station</td><td>Profit ± Rp146,7 juta; utilization ± 29,6%</td><td>Strategis dan relatif positif.</td></tr>
+      <tr><td>Rest Area</td><td>Profit ± -Rp983,4 juta; utilization ± 25,7%</td><td>Traffic ada, tetapi cost structure berat.</td></tr>
+      <tr><td>Public Parking</td><td>Profit ± -Rp395,5 juta; utilization ± 6,8%</td><td>Lebih menyerupai coverage site daripada profit driver.</td></tr>
+      <tr><td>Office</td><td>Profit ± -Rp467,5 juta; utilization ± 13,5%</td><td>Demand belum cukup untuk menutup biaya.</td></tr>
+    </tbody></table>
+    <h3>Click Path & Kunci Jawaban</h3>
+    <table><thead><tr><th>Langkah</th><th>Aksi Demo</th><th>Pertanyaan Pemantik</th><th>Expected Finding</th><th>Implikasi</th></tr></thead><tbody>
+      <tr><td>1</td><td>Buka scatter Utilization vs Profit.</td><td>Apakah utilisasi tinggi selalu profit tinggi?</td><td>Ada kategori dengan revenue/traffic cukup besar tetapi profit negatif.</td><td>Profitability harus dilihat bersama cost structure.</td></tr>
+      <tr><td>2</td><td>Klik kategori Fleet Depot.</td><td>Mengapa kategori ini paling sehat?</td><td>Utilisasi tinggi dan profit positif.</td><td>Captive demand/fleet contract mengurangi demand risk.</td></tr>
+      <tr><td>3</td><td>Klik kategori Rest Area.</td><td>Mengapa traffic tidak cukup membuat profit?</td><td>Revenue besar tetapi profit negatif.</td><td>Capex, sewa, demand charge, maintenance, dan asset exposure perlu dikendalikan.</td></tr>
+      <tr><td>4</td><td>Cek detail lokasi Rest Area KM57 Karawang dan Bali Mandara.</td><td>Site mana yang paling menekan rugi?</td><td>Rest area tertentu muncul sebagai loss contributor besar.</td><td>Perlu strategi optimize/partner, bukan sekadar tambah charger.</td></tr>
+      <tr><td>5</td><td>Lihat Competitor Count.</td><td>Kategori mana yang menarik bagi pemain swasta?</td><td>Mall/office/airport/fleet area menunjukkan kehadiran kompetitor.</td><td>Pemain swasta mengejar captive traffic, ecosystem, dan partnership opportunity.</td></tr>
+    </tbody></table>
+    <div class="callout answer"><strong>Kesimpulan Page 2:</strong> Lokasi ramai tidak otomatis profitable. Fleet depot adalah contoh lokasi sehat karena captive demand, sedangkan rest area dapat tetap rugi karena cost structure dan asset exposure.</div>
+  </section>
+
+  <section class="card page-block" id="page3" style="margin-top:18px;">
+    <h2>Page 3 — Business Model & Partnership</h2>
+    <div class="shot"><img src="assets/page3_business_model.png" alt="Screenshot Page 3"><div class="caption">Final dashboard Page 3: partnership profit, profit by model, revenue vs profit, capex exposure vs profit, dan private player strategy.</div></div>
+    <h3>Tujuan Trainer</h3><p>Menggeser diskusi dari “lokasi mana yang ramai” menjadi “model bisnis mana yang membuat ekspansi tetap feasible”.</p>
+    <h3>Angka Validasi yang Terlihat</h3>
+    <table><thead><tr><th>Indikator / Partnership Model</th><th>Nilai</th><th>Makna</th></tr></thead><tbody>
+      <tr><td>Partnership Profit Total</td><td>± -Rp1,43 miliar</td><td>Profit total sama dengan portfolio 2025.</td></tr>
+      <tr><td>Partnership Profit Margin</td><td>± -16,70%</td><td>Model portofolio masih negatif.</td></tr>
+      <tr><td>Partnership CapEx Exposure</td><td>± Rp10,63 miliar</td><td>Capital exposure besar menjadi isu strategi.</td></tr>
+      <tr><td>Partnership Avg Payback</td><td>± 77,82 tahun</td><td>Payback portofolio belum layak tanpa optimasi.</td></tr>
+      <tr><td>Fleet Partnership</td><td>Profit ± Rp746,4 juta; margin ± 33,7%</td><td>Model paling sehat karena captive demand dan risk sharing.</td></tr>
+      <tr><td>Joint Investment</td><td>Profit ± Rp148,2 juta; margin ± 5,4%</td><td>Masih positif tetapi perlu pengendalian payback.</td></tr>
+      <tr><td>PLN Owned</td><td>Profit ± -Rp1,21 miliar; margin ± -87,1%</td><td>Revenue share besar tidak cukup jika capex/opex exposure tinggi.</td></tr>
+      <tr><td>Strategic Public Service</td><td>Profit ± -Rp972,8 juta</td><td>Site coverage/mandate perlu dipisahkan dari profit target.</td></tr>
+    </tbody></table>
+    <h3>Click Path & Kunci Jawaban</h3>
+    <table><thead><tr><th>Langkah</th><th>Aksi Demo</th><th>Pertanyaan Pemantik</th><th>Expected Finding</th><th>Implikasi</th></tr></thead><tbody>
+      <tr><td>1</td><td>Tampilkan Profit by Partnership Model.</td><td>Model mana yang paling sehat?</td><td>Fleet Partnership paling positif.</td><td>Captive demand dan risk sharing penting.</td></tr>
+      <tr><td>2</td><td>Klik PLN Owned.</td><td>Apakah revenue share tinggi otomatis baik?</td><td>PLN Owned tetap negatif.</td><td>Biaya/capex exposure dapat menutupi revenue advantage.</td></tr>
+      <tr><td>3</td><td>Klik Fleet Partnership.</td><td>Mengapa model ini lebih baik?</td><td>Profit positif dan capex exposure relatif lebih masuk akal.</td><td>Fleet contract cocok untuk demand yang lebih pasti.</td></tr>
+      <tr><td>4</td><td>Lihat CapEx Exposure vs Profit.</td><td>Apakah asset heavy selalu buruk?</td><td>Model asset heavy perlu demand kuat; asset-light menurunkan risiko.</td><td>Ekspansi harus memilih model sesuai lokasi dan demand.</td></tr>
+      <tr><td>5</td><td>Baca Private Player Strategy table.</td><td>Mengapa swasta tetap ekspansi?</td><td>Asset-light, captive fleet, premium corridor, bundling retail/ecosystem.</td><td>PLN dapat mengambil lesson berupa portfolio strategy.</td></tr>
+    </tbody></table>
+    <div class="callout answer"><strong>Kesimpulan Page 3:</strong> PLN Owned tidak otomatis paling baik. Ekspansi yang lebih sehat membutuhkan partnership, captive demand, dan pengurangan capex/opex exposure.</div>
+  </section>
+
+  <section class="card page-block" id="page4" style="margin-top:18px;">
+    <h2>Page 4 — What-if Analysis</h2>
+    <div class="shot"><img src="assets/page4_whatif.png" alt="Screenshot Page 4"><div class="caption">Final dashboard Page 4: scenario profit by mode, regulatory impact, dan parameter panel. Screenshot menunjukkan kondisi slicer belum single-select, sehingga beberapa KPI terlihat agregat.</div></div>
+    <h3>Tujuan Trainer</h3><p>Menunjukkan bahwa keputusan yang terlihat baik secara commercial view dapat berubah setelah regulatory-adjusted view.</p>
+    <div class="callout warning"><strong>Catatan penting untuk demo:</strong> pada screenshot, KPI atas menunjukkan <em>Scenario Profit -Rp2,92 Bio, Viable Sites 92, Loss Making 148</em>. Ini adalah indikasi bahwa KPI sedang teragregasi lintas mode/skenario. Untuk demo, pilih satu <strong>Regulatory Mode</strong> dan satu <strong>Scenario</strong> saat membaca KPI. Chart perbandingan tetap boleh dibiarkan menampilkan seluruh skenario.</div>
+    <h3>Angka Validasi Scenario Preset</h3>
+    <table><thead><tr><th>Scenario</th><th>Commercial Profit</th><th>Regulatory-Adjusted Profit</th><th>Kesimpulan Trainer</th></tr></thead><tbody>
+      <tr><td>Baseline 2025 Actual</td><td>± -Rp1,43 miliar</td><td>± -Rp2,65 miliar</td><td>Baseline sudah negatif; regulatory burden membuatnya lebih berat.</td></tr>
+      <tr><td>Demand Growth Only</td><td>± -Rp0,90 miliar</td><td>± -Rp2,27 miliar</td><td>Demand growth membantu, tetapi belum menyelesaikan cost structure.</td></tr>
+      <tr><td>Commercial Optimization</td><td>± Rp0,72 miliar</td><td>± -Rp0,93 miliar</td><td>Terlihat positif sebelum regulasi, tetapi melemah setelah constraint.</td></tr>
+      <tr><td><strong>Partnership Shift / Recommended</strong></td><td><strong>± Rp2,11 miliar</strong></td><td><strong>± Rp0,87 miliar</strong></td><td><strong>Paling seimbang; tetap positif setelah regulatory adjustment.</strong></td></tr>
+      <tr><td>Aggressive Expansion</td><td>± Rp2,46 miliar</td><td>± -Rp0,09 miliar</td><td>Upside tinggi di commercial view, tetapi hampir kembali negatif setelah constraint.</td></tr>
+    </tbody></table>
+    <h3>Regulatory Impact Waterfall</h3>
+    <table><thead><tr><th>Regulatory Factor</th><th>Expected Profit Impact</th><th>Makna</th></tr></thead><tbody>
+      <tr><td>Reporting / Compliance Cost</td><td>± -Rp243,0 juta</td><td>Biaya kepatuhan mengurangi profit secara langsung.</td></tr>
+      <tr><td>Tariff / Service Fee Cap</td><td>± -Rp153,2 juta</td><td>Commercial upside dari kenaikan tarif/fee dibatasi.</td></tr>
+      <tr><td>Technology Requirement</td><td>± -Rp92,8 juta</td><td>Requirement teknologi menambah capital/cost burden.</td></tr>
+      <tr><td>Minimum Uptime / SLA</td><td>± -Rp45,8 juta</td><td>SLA memperbaiki layanan, tetapi menambah cost.</td></tr>
+      <tr><td>Permit & COD Delay</td><td>Dibaca melalui delay/payback</td><td>Delay memperpanjang waktu realisasi manfaat.</td></tr>
+    </tbody></table>
+    <h3>Click Path & Kunci Jawaban</h3>
+    <table><thead><tr><th>Langkah</th><th>Aksi Demo</th><th>Pertanyaan Pemantik</th><th>Expected Finding</th><th>Implikasi</th></tr></thead><tbody>
+      <tr><td>1</td><td>Pilih Baseline 2025 Actual + Commercial View.</td><td>Bagaimana posisi awal secara komersial?</td><td>Profit sekitar -Rp1,43 miliar.</td><td>Baseline belum sehat.</td></tr>
+      <tr><td>2</td><td>Ganti ke Regulatory-Adjusted View.</td><td>Apa dampak regulatory burden?</td><td>Profit turun menjadi sekitar -Rp2,65 miliar.</td><td>Regulasi memperberat business case jika belum diantisipasi.</td></tr>
+      <tr><td>3</td><td>Pilih Commercial Optimization + Commercial View.</td><td>Apakah optimasi komersial murni cukup?</td><td>Profit menjadi sekitar +Rp0,72 miliar.</td><td>Secara komersial terlihat menarik.</td></tr>
+      <tr><td>4</td><td>Tetap Commercial Optimization, ganti ke Regulatory-Adjusted.</td><td>Apakah masih positif?</td><td>Profit turun menjadi sekitar -Rp0,93 miliar.</td><td>Tariff/fee cap dan compliance cost dapat menghapus upside.</td></tr>
+      <tr><td>5</td><td>Pilih Aggressive Expansion dan bandingkan dua mode.</td><td>Apakah ekspansi agresif otomatis terbaik?</td><td>Commercial +Rp2,46 miliar, regulatory-adjusted sekitar -Rp0,09 miliar.</td><td>Strategi terbesar tidak otomatis paling layak.</td></tr>
+      <tr><td>6</td><td>Pilih Partnership Shift / Recommended + Regulatory-Adjusted.</td><td>Skenario mana yang tetap viable setelah constraint?</td><td>Profit sekitar +Rp0,87 miliar.</td><td>Rekomendasi utama: partnership shift.</td></tr>
+      <tr><td>7</td><td>Naikkan parameter utilization, opex efficiency, partner capex relief secara bertahap.</td><td>Asumsi mana yang paling mengubah profit?</td><td>Profit dinamis berubah sesuai parameter.</td><td>Peserta melihat sensitivitas keputusan terhadap demand, cost, dan partnership.</td></tr>
+    </tbody></table>
+    <div class="callout answer"><strong>Kesimpulan Page 4:</strong> Partnership Shift / Recommended adalah strategi paling seimbang karena tetap positif setelah regulatory-adjusted view, sedangkan Commercial Optimization dan Aggressive Expansion terlihat menarik sebelum constraint tetapi melemah setelah regulasi dihitung.</div>
+  </section>
+
+  <section class="card cheat" id="cheatsheet" style="margin-top:18px;">
+    <h2>Cheat Sheet Demo Cepat</h2>
+    <table><thead><tr><th>Urutan</th><th>Aksi Demo</th><th>Kalimat Kunci</th></tr></thead><tbody>
+      <tr><td>1</td><td>Page 1: tunjukkan Revenue Rp8,54 miliar vs Profit -Rp1,43 miliar.</td><td>“SPKLU sudah menghasilkan revenue, tetapi belum profitable.”</td></tr>
+      <tr><td>2</td><td>Page 1: tunjukkan 7 profitable vs 17 loss-making sites.</td><td>“Masalahnya bersifat portofolio, bukan satu-dua lokasi saja.”</td></tr>
+      <tr><td>3</td><td>Page 2: klik Fleet Depot.</td><td>“Captive demand membuat kategori ini paling sehat.”</td></tr>
+      <tr><td>4</td><td>Page 2: klik Rest Area.</td><td>“Traffic ada, tetapi cost structure membuat profit negatif.”</td></tr>
+      <tr><td>5</td><td>Page 3: klik PLN Owned.</td><td>“Revenue share tinggi tidak cukup jika capex/opex exposure besar.”</td></tr>
+      <tr><td>6</td><td>Page 3: klik Fleet Partnership.</td><td>“Partnership dengan demand pasti lebih feasible.”</td></tr>
+      <tr><td>7</td><td>Page 4: Commercial Optimization, Commercial View.</td><td>“Secara komersial terlihat bisa positif.”</td></tr>
+      <tr><td>8</td><td>Page 4: ubah ke Regulatory-Adjusted.</td><td>“Setelah regulasi, upside dapat hilang.”</td></tr>
+      <tr><td>9</td><td>Page 4: pilih Partnership Shift / Recommended.</td><td>“Ini skenario yang tetap positif setelah constraint.”</td></tr>
+      <tr><td>10</td><td>Tutup dengan rekomendasi portofolio.</td><td>“Strategi terbaik adalah kombinasi captive demand, asset-light partnership, dan regulatory-aware expansion.”</td></tr>
+    </tbody></table>
+  </section>
+
+  <section class="card" id="answer-key" style="margin-top:18px;">
+    <h2>Kunci Jawaban Akhir Case #2</h2>
+    <table><thead><tr><th>Komponen</th><th>Jawaban Referensi</th></tr></thead><tbody>
+      <tr><td>Diagnosis utama</td><td>Bisnis SPKLU sudah memiliki revenue, tetapi profitabilitas portfolio masih negatif karena utilisasi belum cukup, cost structure berat, dan model investasi belum optimal.</td></tr>
+      <tr><td>Lokasi terbaik</td><td>Fleet depot dan sebagian airport/station karena demand lebih pasti dan traffic lebih berkualitas.</td></tr>
+      <tr><td>Lokasi bermasalah</td><td>Rest area tertentu, office/public parking, dan strategic public service site karena biaya tinggi, utilisasi rendah, atau fungsi coverage.</td></tr>
+      <tr><td>Kesimpulan lokasi</td><td>Traffic tinggi tidak otomatis profitable; lokasi harus dinilai dari utilization, cost structure, uptime, charger type, payback, dan partnership.</td></tr>
+      <tr><td>Kesimpulan partnership</td><td>PLN Owned memiliki exposure biaya/capex tinggi; fleet partnership, site-host, joint investment, dan asset-light model lebih feasible untuk ekspansi.</td></tr>
+      <tr><td>Dampak regulasi</td><td>Commercial optimization bisa terlihat menarik sebelum regulasi, tetapi regulatory-adjusted view menurunkan profit melalui cap, compliance cost, technology requirement, dan delay.</td></tr>
+      <tr><td>Skenario rekomendasi</td><td>Partnership Shift / Recommended.</td></tr>
+      <tr><td>Alasan rekomendasi</td><td>Strategi ini tetap positif setelah regulatory adjustment dan lebih seimbang antara profit, risk, feasibility, dan ecosystem role.</td></tr>
+    </tbody></table>
+    <h3>Narasi Final untuk Disampaikan</h3>
+    <div class="callout answer">Dashboard menunjukkan bahwa tantangan SPKLU bukan sekadar rendahnya transaksi. Pada 2025, revenue PLN dari SPKLU sudah sekitar Rp8,54 miliar, tetapi profit portfolio masih negatif sekitar Rp1,43 miliar dengan margin -16,70%. Diagnosis lokasi menunjukkan bahwa rest area dapat memiliki traffic tetapi tetap rugi karena cost structure, sedangkan fleet depot lebih sehat karena captive demand. Dari sisi model bisnis, PLN Owned tidak otomatis paling baik karena capex/opex exposure tinggi. Pada simulasi, Commercial Optimization dan Aggressive Expansion terlihat menarik di commercial view, tetapi melemah setelah regulatory-adjusted view. Karena itu, skenario yang paling direkomendasikan adalah Partnership Shift / Recommended.</div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>Kesalahan Kesimpulan yang Perlu Dikoreksi Trainer</h2>
+    <table><thead><tr><th>Kesimpulan Kurang Tepat</th><th>Koreksi Trainer</th></tr></thead><tbody>
+      <tr><td>“SPKLU rugi karena tidak ada transaksi.”</td><td>Revenue sudah ada; masalahnya adalah margin, cost structure, dan model portofolio.</td></tr>
+      <tr><td>“Traffic tinggi berarti lokasi bagus.”</td><td>Rest area menunjukkan traffic/revenue tidak otomatis menghasilkan profit jika biaya tinggi.</td></tr>
+      <tr><td>“PLN Owned paling baik karena revenue share paling besar.”</td><td>Revenue share harus dibaca bersama capex/opex exposure dan payback.</td></tr>
+      <tr><td>“Aggressive Expansion adalah yang terbaik karena commercial profit tertinggi.”</td><td>Setelah regulatory-adjusted view, aggressive expansion hampir kembali negatif.</td></tr>
+      <tr><td>“Regulasi hanya catatan legal, bukan variabel bisnis.”</td><td>Regulasi memengaruhi tarif/fee, biaya compliance, teknologi, delay, dan SLA; artinya memengaruhi kelayakan finansial.</td></tr>
+    </tbody></table>
+  </section>
+
+  <div class="footer">PLN BI Training · Studi Kasus #2 SPKLU · Trainer Facilitation & Answer Key · Final Dashboard Version</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trainer Guide - Case #1 PLN Sales Final Dashboard</title>
+  <style>
+:root{
+  --pln-blue:#0b4f93;--pln-blue-2:#073864;--pln-cyan:#00a3e0;--pln-yellow:#ffd100;
+  --ink:#172033;--muted:#667085;--bg:#f5f7fb;--card:#fff;--line:#d9e2ef;
+  --soft-blue:#eaf4ff;--soft-yellow:#fff7d1;--soft-green:#e9f8ef;--soft-red:#fff0f0;--soft-purple:#f3efff;
+  --shadow:0 10px 25px rgba(16,24,40,.08);--radius:18px;
+}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+.hero{background:linear-gradient(135deg,var(--pln-blue),var(--pln-blue-2) 66%,#072a4a);color:#fff;padding:44px 52px;border-bottom:7px solid var(--pln-yellow)}
+.hero .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;opacity:.9;font-weight:700}.hero h1{margin:12px 0 10px;font-size:34px;line-height:1.18;max-width:1160px}.hero p{max-width:1040px;font-size:16px;opacity:.94;margin:0}
+.toolbar{position:sticky;top:0;z-index:10;background:rgba(245,247,251,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(217,226,239,.85)}
+.toolbar-inner{max-width:1220px;margin:0 auto;padding:12px 24px;display:flex;gap:10px;flex-wrap:wrap}
+button,.pill-link{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 14px;color:var(--ink);font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 2px 7px rgba(16,24,40,.05)}button.primary{background:var(--pln-blue);color:#fff;border-color:var(--pln-blue)}
+.wrap{max-width:1220px;margin:0 auto;padding:28px 24px 70px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-6{grid-column:span 6}.span-4{grid-column:span 4}
+h2{color:var(--pln-blue);margin:4px 0 14px;font-size:24px}h3{margin:20px 0 10px;font-size:18px;color:#123b63}h4{margin:16px 0 8px;font-size:15px;color:#1d4f7b}p{margin:8px 0 12px}.small{color:var(--muted);font-size:13px}.tag{display:inline-block;border-radius:999px;padding:4px 10px;background:var(--soft-blue);color:#074b86;font-weight:700;font-size:12px;margin:0 4px 6px 0}.tag.yellow{background:var(--soft-yellow);color:#694b00}.tag.green{background:var(--soft-green);color:#087443}.tag.red{background:var(--soft-red);color:#9f1b1b}.tag.purple{background:var(--soft-purple);color:#53389e}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:14px}th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top}th{background:#edf5ff;color:#123b63;text-align:left}tr:nth-child(even) td{background:#fafcff}
+.callout{border-left:5px solid var(--pln-cyan);background:#eef9ff;padding:14px 16px;border-radius:12px;margin:14px 0}.callout.warning{border-left-color:var(--pln-yellow);background:#fff9df}.callout.decision,.callout.answer{border-left-color:#12b76a;background:#effcf5}.callout.red{border-left-color:#f04438;background:#fff4f4}.page-block{border-top:6px solid var(--pln-blue)}
+.shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;margin:14px 0}.shot img{display:block;width:100%;height:auto}.shot .caption{padding:9px 12px;color:var(--muted);font-size:12px;background:#fbfdff;border-top:1px solid var(--line)}
+.notes{width:100%;min-height:115px;border:1px dashed #b6c6d8;border-radius:14px;background:#fbfdff;padding:14px;color:var(--ink);outline:none}.notes:empty:before{content:attr(data-placeholder);color:#98a2b3}.step-list{counter-reset:step;padding-left:0;list-style:none}.step-list li{position:relative;padding-left:44px;margin:12px 0}.step-list li:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--pln-blue);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700}.cheat{background:#0b315c;color:#fff;border-color:#0b315c}.cheat h2,.cheat h3{color:#fff}.cheat table th{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.25)}.cheat table td{border-color:rgba(255,255,255,.25);background:transparent}
+.footer{color:var(--muted);font-size:12px;text-align:center;margin-top:34px}@media(max-width:850px){.span-8,.span-6,.span-4{grid-column:span 12}.hero{padding:34px 24px}.hero h1{font-size:26px}}@media print{.toolbar{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}.hero{padding:26px 34px}.wrap{padding:20px 10px}.shot{break-inside:avoid}.cheat{color:#000;background:#fff;border-color:var(--line)}.cheat h2,.cheat h3{color:var(--pln-blue)}.cheat table th{background:#edf5ff;color:#123b63;border-color:var(--line)}.cheat table td{border-color:var(--line)}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">Trainer Facilitation & Answer Key · Final Dashboard Version · PLN BI Training</div>
+  <h1>Studi Kasus #1 — Optimalisasi Pertumbuhan Penjualan Listrik Segmen Industri & Bisnis</h1>
+  <p>Runbook demo trainer berdasarkan dashboard Power BI final: click path, expected insight, angka validasi, kunci jawaban, dan narasi rekomendasi akhir.</p>
+</header>
+<div class="toolbar"><div class="toolbar-inner"><button class="primary" onclick="window.print()">Cetak / Simpan PDF</button><a class="pill-link" href="#page1">Page 1</a><a class="pill-link" href="#page2">Page 2</a><a class="pill-link" href="#page3">Page 3</a><a class="pill-link" href="#page4">Page 4</a><a class="pill-link" href="#cheatsheet">Cheat Sheet</a><a class="pill-link" href="#answer-key">Kunci Akhir</a></div></div>
+<main class="wrap">
+  <section class="grid">
+    <div class="card span-8">
+      <h2>1. Tujuan Fasilitasi</h2>
+      <p>Trainer perlu menunjukkan bahwa dashboard ini bukan sekadar laporan penjualan, tetapi alat untuk mengarahkan peserta dari <strong>gap kinerja</strong> menuju <strong>diagnosis peluang</strong>, <strong>akar masalah</strong>, dan <strong>rekomendasi strategi</strong>.</p>
+      <div class="callout answer"><strong>Pesan utama:</strong> stagnasi penjualan bukan karena tidak ada potensi pasar. Potensi tersedia, tetapi sebagian belum terkoneksi menjadi pelanggan aktif dan sebagian sudah terkoneksi namun utilisasinya belum optimal.</div>
+    </div>
+    <div class="card span-4">
+      <h2>Struktur Demo</h2>
+      <span class="tag">Sales Gap</span><span class="tag yellow">Opportunity</span><span class="tag green">RCA</span><span class="tag red">Priority</span><span class="tag purple">Scenario</span>
+      <p class="small">Dashboard final terdiri dari 4 page: Executive Overview, Gap Analysis, RCA & Priority, dan What-if.</p>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>2. Storyline Utama yang Harus Terbentuk</h2>
+    <table><thead><tr><th>Tahap</th><th>Dashboard Page</th><th>Pertanyaan Trainer</th><th>Kesimpulan yang Diharapkan</th></tr></thead><tbody>
+      <tr><td>1</td><td>PLN Sales Executive Overview</td><td>Apakah gap penjualan nyata dan di mana terkonsentrasi?</td><td>Gap material dan terutama terkonsentrasi pada KI Beta serta CBD Delta.</td></tr>
+      <tr><td>2</td><td>Sales Gap & Opportunity</td><td>Apakah pasar tidak ada atau peluang belum terealisasi?</td><td>Potensi tersedia; realisasi baru 40,26% dari potensi.</td></tr>
+      <tr><td>3</td><td>Strategic Priority Analysis</td><td>Akar masalah mana yang paling recoverable?</td><td>Penyambungan terlambat menjadi driver utama; utilisasi rendah menjadi prioritas kedua.</td></tr>
+      <tr><td>4</td><td>Scenario What-if Analysis</td><td>Skenario mana yang paling seimbang?</td><td>Targeted / Recommended menutup 55,80% gap dengan feasibility dan risiko menengah.</td></tr>
+    </tbody></table>
+  </section>
+
+  <section class="card page-block" id="page1" style="margin-top:18px;">
+    <h2>Page 1 — PLN Sales Executive Overview</h2>
+    <div class="shot"><img src="assets/page1_executive_overview.png" alt="Screenshot Page 1"><div class="caption">Final dashboard Page 1: KPI sales, trend actual vs target, sales gap by area, matrix area x segment, dan actual sales by area.</div></div>
+    <h3>Tujuan Trainer</h3><p>Membuka diskusi bahwa gap penjualan material dan tidak tersebar merata. Peserta diarahkan memilih fokus analisis, bukan langsung menyusun program umum seluruh wilayah.</p>
+    <h3>Angka Validasi yang Terlihat</h3>
+    <table><thead><tr><th>Indikator</th><th>Nilai pada Dashboard</th><th>Makna</th></tr></thead><tbody>
+      <tr><td>Actual Sales</td><td>± 9,09K GWh</td><td>Total realisasi penjualan pada periode dashboard.</td></tr>
+      <tr><td>Target Achievement</td><td>± 94,23%</td><td>Penjualan belum mencapai target penuh.</td></tr>
+      <tr><td>Sales Gap</td><td>± 556,93 GWh</td><td>Gap material yang harus dijelaskan.</td></tr>
+      <tr><td>Lost Revenue</td><td>± Rp843,29 miliar</td><td>Gap diterjemahkan menjadi nilai bisnis.</td></tr>
+      <tr><td>Gap terbesar area</td><td>KI Beta - Prioritas ± 258,87 GWh</td><td>Fokus utama investigasi.</td></tr>
+      <tr><td>Gap terbesar kedua</td><td>CBD Delta - Prioritas ± 139,49 GWh</td><td>Fokus kedua investigasi.</td></tr>
+    </tbody></table>
+    <h3>Click Path & Kunci Jawaban</h3>
+    <table><thead><tr><th>Langkah</th><th>Aksi Demo</th><th>Pertanyaan Pemantik</th><th>Expected Finding</th><th>Implikasi</th></tr></thead><tbody>
+      <tr><td>1</td><td>Buka Page 1 tanpa filter tambahan.</td><td>Apakah kinerja sudah sesuai target?</td><td>Achievement 94,23% dengan sales gap 556,93 GWh.</td><td>Masalah cukup material.</td></tr>
+      <tr><td>2</td><td>Tunjukkan KPI Lost Revenue.</td><td>Apa dampak bisnis dari gap?</td><td>Lost revenue ± Rp843,29 miliar.</td><td>Gap bukan hanya isu operasional, tetapi revenue opportunity.</td></tr>
+      <tr><td>3</td><td>Amati line chart Actual vs Target.</td><td>Apakah target terus berada di atas aktual?</td><td>Target konsisten lebih tinggi dari aktual.</td><td>Perlu investigasi penyebab, bukan sekadar monitoring.</td></tr>
+      <tr><td>4</td><td>Lihat/klik bar KI Beta - Prioritas.</td><td>Area mana yang paling menahan pertumbuhan?</td><td>KI Beta ± 258,87 GWh gap.</td><td>Investigasi pertama diarahkan ke KI Beta.</td></tr>
+      <tr><td>5</td><td>Lihat matrix Area x Segment.</td><td>Segmen apa yang dominan di KI Beta?</td><td>KI Beta didominasi segmen Industri.</td><td>Hipotesis awal: peluang industri belum terkoneksi optimal.</td></tr>
+      <tr><td>6</td><td>Lihat CBD Delta - Prioritas.</td><td>Apakah ada fokus kedua?</td><td>CBD Delta ± 139,49 GWh gap, dominan Bisnis.</td><td>Perlu strategi berbeda untuk segmen bisnis.</td></tr>
+    </tbody></table>
+    <div class="callout answer"><strong>Kesimpulan Page 1:</strong> gap penjualan terkonsentrasi pada KI Beta dan CBD Delta, dengan karakter segmen yang berbeda: KI Beta terutama Industri, CBD Delta terutama Bisnis.</div>
+  </section>
+
+  <section class="card page-block" id="page2" style="margin-top:18px;">
+    <h2>Page 2 — Sales Gap & Opportunity</h2>
+    <div class="shot"><img src="assets/page2_gap_analysis.png" alt="Screenshot Page 2"><div class="caption">Final dashboard Page 2: KPI opportunity, potential vs realized, sales funnel, dan opportunity detail.</div></div>
+    <h3>Tujuan Trainer</h3><p>Membuktikan bahwa masalah bukan karena pasar tidak tersedia. Opportunity potential tinggi, tetapi belum sepenuhnya menjadi konsumsi aktif.</p>
+    <h3>Angka Validasi yang Terlihat</h3>
+    <table><thead><tr><th>Indikator</th><th>Nilai pada Dashboard</th><th>Makna</th></tr></thead><tbody>
+      <tr><td>Potential Annual</td><td>803,52 GWh</td><td>Potensi pasar tersedia.</td></tr>
+      <tr><td>Realized Annual</td><td>323,51 GWh</td><td>Realisasi masih jauh di bawah potensi.</td></tr>
+      <tr><td>Opportunity Gap</td><td>480,02 GWh</td><td>Peluang belum tertangkap secara material.</td></tr>
+      <tr><td>Opportunity Capture</td><td>40,26%</td><td>Baru sekitar 40% potensi yang menjadi realisasi.</td></tr>
+      <tr><td>Funnel akhir</td><td>803,52 → 323,51 GWh</td><td>Terjadi leakage besar sepanjang funnel.</td></tr>
+    </tbody></table>
+    <h3>Click Path & Kunci Jawaban</h3>
+    <table><thead><tr><th>Langkah</th><th>Aksi Demo</th><th>Pertanyaan Pemantik</th><th>Expected Finding</th><th>Implikasi</th></tr></thead><tbody>
+      <tr><td>1</td><td>Buka Page 2 seluruh area.</td><td>Apakah wilayah kekurangan demand?</td><td>Potential 803,52 GWh.</td><td>Demand/opportunity tersedia.</td></tr>
+      <tr><td>2</td><td>Tunjukkan KPI Realized dan Capture.</td><td>Berapa yang sudah terealisasi?</td><td>Realisasi 323,51 GWh; capture 40,26%.</td><td>Masalah utama ada pada konversi peluang.</td></tr>
+      <tr><td>3</td><td>Lihat Potential vs Realized by Area.</td><td>Area mana dengan gap terbesar?</td><td>KI Beta gap terbesar; CBD Delta kedua.</td><td>Konsisten dengan temuan Page 1.</td></tr>
+      <tr><td>4</td><td>Pilih KI Beta - Prioritas.</td><td>Karakter leakage apa yang muncul?</td><td>Potensi tinggi, realisasi jauh lebih rendah.</td><td>Fokus pada konversi/penyambungan industri.</td></tr>
+      <tr><td>5</td><td>Pilih CBD Delta - Prioritas.</td><td>Apakah masalahnya sama?</td><td>Opportunity gap besar pada subsegmen bisnis seperti mall/hotel/restoran.</td><td>Fokus pada aktivasi dan peningkatan konsumsi pelanggan bisnis.</td></tr>
+      <tr><td>6</td><td>Tunjukkan PLN Sales Funnel.</td><td>Di mana peluang turun?</td><td>Funnel turun dari 803,52 ke 323,51 GWh.</td><td>Perlu analisis akar masalah pada Page 3.</td></tr>
+    </tbody></table>
+    <div class="callout answer"><strong>Kesimpulan Page 2:</strong> potensi pertumbuhan tersedia, tetapi hanya 40,26% yang terealisasi. Masalahnya adalah opportunity leakage, bukan ketiadaan pasar.</div>
+  </section>
+
+  <section class="card page-block" id="page3" style="margin-top:18px;">
+    <h2>Page 3 — Strategic Priority Analysis</h2>
+    <div class="shot"><img src="assets/page3_rca_priority.png" alt="Screenshot Page 3"><div class="caption">Final dashboard Page 3: recoverable sales, root cause, recommended intervention, impact-feasibility, dan priority table.</div></div>
+    <h3>Tujuan Trainer</h3><p>Mengarahkan peserta membedakan antara gap total dan gap yang recoverable/actionable. Peserta harus memilih prioritas, bukan menyimpulkan semua masalah perlu ditangani sama rata.</p>
+    <h3>Angka Validasi yang Terlihat</h3>
+    <table><thead><tr><th>Indikator</th><th>Nilai pada Dashboard</th><th>Makna</th></tr></thead><tbody>
+      <tr><td>Recoverable Sales</td><td>212,57 GWh</td><td>Bagian peluang yang realistis ditindaklanjuti.</td></tr>
+      <tr><td>Recoverable Revenue</td><td>Rp320,96 miliar</td><td>Dampak bisnis potensi pemulihan.</td></tr>
+      <tr><td>Weighted Feasibility</td><td>3,66</td><td>Strategi cukup feasible, tetapi masih perlu prioritas.</td></tr>
+      <tr><td>Root cause terbesar</td><td>Penyambungan Terlambat ± 133,0 GWh</td><td>Driver utama, terutama KI Beta Industri.</td></tr>
+      <tr><td>Root cause kedua</td><td>Utilisasi Rendah ± 43,7 GWh</td><td>Quick win, terutama CBD Delta Bisnis.</td></tr>
+      <tr><td>Root cause kecil</td><td>Kendala Keandalan Selektif ± 4,0 GWh</td><td>Reliability bukan solusi utama seluruh wilayah.</td></tr>
+    </tbody></table>
+    <h3>Click Path & Kunci Jawaban</h3>
+    <table><thead><tr><th>Langkah</th><th>Aksi Demo</th><th>Pertanyaan Pemantik</th><th>Expected Finding</th><th>Implikasi</th></tr></thead><tbody>
+      <tr><td>1</td><td>Buka Page 3 seluruh area.</td><td>Berapa peluang yang recoverable?</td><td>212,57 GWh dan Rp320,96 miliar.</td><td>Fokus pada peluang actionable.</td></tr>
+      <tr><td>2</td><td>Tunjukkan waterfall root cause.</td><td>Akar masalah terbesar apa?</td><td>Penyambungan Terlambat ± 133 GWh.</td><td>Program fast-track connection perlu jadi prioritas utama.</td></tr>
+      <tr><td>3</td><td>Klik/lihat intervensi Fast-Track Connection.</td><td>Program apa yang paling berdampak?</td><td>Fast-Track Connection Pelanggan Industri paling besar.</td><td>Fokus pada pipeline industri bernilai tinggi.</td></tr>
+      <tr><td>4</td><td>Lihat Customer Activation & Electrification.</td><td>Apa quick win kedua?</td><td>± 43,7 GWh.</td><td>Aktivasi pelanggan bisnis menjadi pendamping strategi utama.</td></tr>
+      <tr><td>5</td><td>Lihat Reliability Reinforcement.</td><td>Apakah reliability solusi utama?</td><td>Kontribusi kecil, ± 4,0 GWh.</td><td>Reliability dilakukan selektif, bukan program menyeluruh.</td></tr>
+      <tr><td>6</td><td>Lihat Priority Table.</td><td>Di mana intervensi dilakukan?</td><td>KI Beta: fast-track industri; CBD Delta: utilisasi bisnis.</td><td>Strategi harus targeted.</td></tr>
+    </tbody></table>
+    <div class="callout answer"><strong>Kesimpulan Page 3:</strong> prioritas utama adalah percepatan penyambungan pelanggan industri, didukung aktivasi/utilisasi pelanggan bisnis; reliability hanya faktor selektif.</div>
+  </section>
+
+  <section class="card page-block" id="page4" style="margin-top:18px;">
+    <h2>Page 4 — Scenario What-if Analysis</h2>
+    <div class="shot"><img src="assets/page4_whatif.png" alt="Screenshot Page 4"><div class="caption">Final dashboard Page 4: scenario selector, KPI skenario, comparison incremental, baseline vs simulated vs target, detail intervensi, dan decision narrative.</div></div>
+    <h3>Tujuan Trainer</h3><p>Menunjukkan bahwa strategi harus diuji dampaknya. Peserta membandingkan skenario konservatif, targeted, dan agresif, lalu memilih yang paling seimbang.</p>
+    <h3>Angka Validasi Targeted / Recommended</h3>
+    <table><thead><tr><th>Indikator</th><th>Nilai pada Dashboard</th><th>Makna</th></tr></thead><tbody>
+      <tr><td>Scenario Incremental</td><td>187,63 GWh</td><td>Tambahan sales dari skenario targeted.</td></tr>
+      <tr><td>Scenario Incremental Revenue</td><td>Rp283,26 miliar</td><td>Dampak revenue tambahan.</td></tr>
+      <tr><td>Scenario Gap Closed</td><td>55,80%</td><td>Lebih dari separuh gap dapat ditutup.</td></tr>
+      <tr><td>Scenario Achievement After</td><td>95,70%</td><td>Achievement meningkat signifikan, meski belum 100%.</td></tr>
+      <tr><td>Intervensi terbesar</td><td>Fast-Track Connection Pelanggan Industri ± 109,5 GWh</td><td>Driver utama perbaikan.</td></tr>
+    </tbody></table>
+    <h3>Perbandingan Skenario</h3>
+    <table><thead><tr><th>Skenario</th><th>Incremental Sales</th><th>Interpretasi</th></tr></thead><tbody>
+      <tr><td>Conservative</td><td>± 79,3 GWh</td><td>Aman tetapi kurang material.</td></tr>
+      <tr><td>Targeted / Recommended</td><td>± 187,6 GWh</td><td>Paling seimbang antara dampak dan feasibility.</td></tr>
+      <tr><td>Aggressive</td><td>± 289,4 GWh</td><td>Dampak tertinggi tetapi effort/risk lebih besar.</td></tr>
+    </tbody></table>
+    <h3>Click Path & Kunci Jawaban</h3>
+    <table><thead><tr><th>Langkah</th><th>Aksi Demo</th><th>Pertanyaan Pemantik</th><th>Expected Finding</th><th>Implikasi</th></tr></thead><tbody>
+      <tr><td>1</td><td>Pilih Conservative.</td><td>Apa hasil strategi paling aman?</td><td>Incremental ± 79,3 GWh.</td><td>Dampak terbatas.</td></tr>
+      <tr><td>2</td><td>Pilih Targeted / Recommended.</td><td>Apa hasil strategi fokus area prioritas?</td><td>187,63 GWh; gap closed 55,80%; achievement 95,70%.</td><td>Strategi paling rasional.</td></tr>
+      <tr><td>3</td><td>Lihat detail incremental by intervention.</td><td>Program mana yang paling berkontribusi?</td><td>Fast-track connection industri paling besar.</td><td>Konsisten dengan root cause Page 3.</td></tr>
+      <tr><td>4</td><td>Pilih Aggressive.</td><td>Apakah hasil tertinggi otomatis terbaik?</td><td>± 289,4 GWh, tetapi effort/risk lebih tinggi.</td><td>Perlu trade-off, bukan hanya maksimum angka.</td></tr>
+      <tr><td>5</td><td>Kembali ke Targeted.</td><td>Apa rekomendasi akhir?</td><td>Targeted / Recommended.</td><td>Fokus pada KI Beta dan CBD Delta.</td></tr>
+    </tbody></table>
+    <div class="callout answer"><strong>Kesimpulan Page 4:</strong> Targeted / Recommended adalah skenario yang paling seimbang: incremental sales material, gap closed 55,80%, dan risiko implementasi masih lebih realistis daripada aggressive.</div>
+  </section>
+
+  <section class="card cheat" id="cheatsheet" style="margin-top:18px;">
+    <h2>Cheat Sheet Demo Cepat</h2>
+    <table><thead><tr><th>Urutan</th><th>Aksi Demo</th><th>Kalimat Utama</th></tr></thead><tbody>
+      <tr><td>1</td><td>Page 1: tunjukkan KPI gap dan lost revenue.</td><td>“Achievement baru 94,23%, dengan gap 556,93 GWh dan lost revenue Rp843,29 miliar.”</td></tr>
+      <tr><td>2</td><td>Page 1: tunjukkan KI Beta dan CBD Delta.</td><td>“Gap terbesar terkonsentrasi pada KI Beta dan CBD Delta, sehingga analisis harus fokus.”</td></tr>
+      <tr><td>3</td><td>Page 2: tunjukkan opportunity KPI.</td><td>“Potensi 803,52 GWh ada, tetapi realisasi baru 323,51 GWh.”</td></tr>
+      <tr><td>4</td><td>Page 2: tunjukkan funnel.</td><td>“Masalahnya bukan ketiadaan pasar, tetapi opportunity leakage.”</td></tr>
+      <tr><td>5</td><td>Page 3: tunjukkan root cause.</td><td>“Penyambungan terlambat adalah driver terbesar, disusul utilisasi rendah.”</td></tr>
+      <tr><td>6</td><td>Page 3: tunjukkan reliability kecil.</td><td>“Reliability bukan solusi utama seluruh wilayah; hanya selektif.”</td></tr>
+      <tr><td>7</td><td>Page 4: pilih Targeted.</td><td>“Strategi targeted menutup 55,80% gap dan menaikkan achievement ke 95,70%.”</td></tr>
+      <tr><td>8</td><td>Tutup dengan rekomendasi.</td><td>“Fokus pada fast-track industri KI Beta dan aktivasi bisnis CBD Delta.”</td></tr>
+    </tbody></table>
+  </section>
+
+  <section class="card page-block" id="answer-key" style="margin-top:18px;">
+    <h2>Kunci Jawaban Akhir Case #1</h2>
+    <table><thead><tr><th>Komponen</th><th>Jawaban Referensi</th></tr></thead><tbody>
+      <tr><td>Diagnosis utama</td><td>Penjualan tertinggal bukan karena tidak ada potensi pasar, tetapi karena potensi wilayah belum sepenuhnya berubah menjadi konsumsi listrik aktual.</td></tr>
+      <tr><td>Area prioritas</td><td>KI Beta - Prioritas untuk segmen Industri dan CBD Delta - Prioritas untuk segmen Bisnis.</td></tr>
+      <tr><td>Root cause utama</td><td>Penyambungan terlambat pelanggan industri dan utilisasi rendah pelanggan bisnis aktif.</td></tr>
+      <tr><td>Program prioritas 1</td><td>Fast-Track Connection Pelanggan Industri, terutama pada KI Beta.</td></tr>
+      <tr><td>Program prioritas 2</td><td>Customer Activation & Electrification Bisnis, terutama pada CBD Delta.</td></tr>
+      <tr><td>Program pendukung</td><td>Targeted Acquisition & Account Engagement serta Reliability Reinforcement secara selektif.</td></tr>
+      <tr><td>Skenario rekomendasi</td><td>Targeted / Recommended.</td></tr>
+      <tr><td>Dampak simulasi</td><td>Incremental sales ± 187,63 GWh; incremental revenue ± Rp283,26 miliar; gap closed 55,80%; achievement after 95,70%.</td></tr>
+      <tr><td>Risiko/asumsi</td><td>Memerlukan koordinasi teknis penyambungan, prioritisasi pelanggan bernilai tinggi, engagement account, dan kesiapan eksekusi area.</td></tr>
+    </tbody></table>
+    <h3>Narasi Final untuk Demo</h3>
+    <div class="callout answer">“Dashboard menunjukkan bahwa stagnasi penjualan PLN Wilayah X bukan disebabkan oleh tidak adanya potensi pasar. Potensi tambahan mencapai 803,52 GWh, tetapi realisasi baru 323,51 GWh. Gap terbesar terkonsentrasi pada KI Beta dan CBD Delta. KI Beta terutama menghadapi isu penyambungan pelanggan industri, sedangkan CBD Delta menunjukkan peluang aktivasi dan utilisasi pelanggan bisnis. Oleh karena itu, strategi yang direkomendasikan adalah skenario Targeted / Recommended melalui fast-track connection pelanggan industri dan customer activation bisnis. Skenario ini berpotensi menambah 187,63 GWh, menutup 55,80% gap, dan meningkatkan achievement menjadi 95,70%.”</div>
+  </section>
+  <div class="footer">Trainer Guide · Case #1 Final Dashboard · PLN BI Training</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Participant Guide - Case #2 SPKLU Final Dashboard</title>
+  <style>
+    :root{
+      --pln-blue:#0b4f93;--pln-blue-2:#073864;--pln-cyan:#00a3e0;--pln-yellow:#ffd100;
+      --ink:#172033;--muted:#667085;--bg:#f5f7fb;--card:#fff;--line:#d9e2ef;
+      --soft-blue:#eaf4ff;--soft-yellow:#fff7d1;--soft-green:#e9f8ef;--soft-red:#fff0f0;--soft-purple:#f3efff;
+      --shadow:0 10px 25px rgba(16,24,40,.08);--radius:18px;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+    .hero{background:linear-gradient(135deg,var(--pln-blue),var(--pln-blue-2) 66%,#072a4a);color:#fff;padding:44px 52px;border-bottom:7px solid var(--pln-yellow)}
+    .hero .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;opacity:.9;font-weight:700}.hero h1{margin:12px 0 10px;font-size:34px;line-height:1.18;max-width:1160px}.hero p{max-width:1020px;font-size:16px;opacity:.94;margin:0}
+    .toolbar{position:sticky;top:0;z-index:10;background:rgba(245,247,251,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(217,226,239,.85)}
+    .toolbar-inner{max-width:1220px;margin:0 auto;padding:12px 24px;display:flex;gap:10px;flex-wrap:wrap}
+    button,.pill-link{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 14px;color:var(--ink);font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 2px 7px rgba(16,24,40,.05)}button.primary{background:var(--pln-blue);color:#fff;border-color:var(--pln-blue)}
+    .wrap{max-width:1220px;margin:0 auto;padding:28px 24px 70px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-6{grid-column:span 6}.span-4{grid-column:span 4}
+    h2{color:var(--pln-blue);margin:4px 0 14px;font-size:24px}h3{margin:20px 0 10px;font-size:18px;color:#123b63}h4{margin:16px 0 8px;font-size:15px;color:#1d4f7b}p{margin:8px 0 12px}.small{color:var(--muted);font-size:13px}.tag{display:inline-block;border-radius:999px;padding:4px 10px;background:var(--soft-blue);color:#074b86;font-weight:700;font-size:12px;margin:0 4px 6px 0}.tag.yellow{background:var(--soft-yellow);color:#694b00}.tag.green{background:var(--soft-green);color:#087443}.tag.red{background:var(--soft-red);color:#9f1b1b}.tag.purple{background:var(--soft-purple);color:#53389e}
+    table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:14px}th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top}th{background:#edf5ff;color:#123b63;text-align:left}tr:nth-child(even) td{background:#fafcff}
+    .callout{border-left:5px solid var(--pln-cyan);background:#eef9ff;padding:14px 16px;border-radius:12px;margin:14px 0}.callout.warning{border-left-color:var(--pln-yellow);background:#fff9df}.callout.decision{border-left-color:#12b76a;background:#effcf5}.callout.red{border-left-color:#f04438;background:#fff4f4}.page-block{border-top:6px solid var(--pln-blue)}
+    .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;margin:14px 0}.shot img{display:block;width:100%;height:auto}.shot .caption{padding:9px 12px;color:var(--muted);font-size:12px;background:#fbfdff;border-top:1px solid var(--line)}
+    .notes{width:100%;min-height:115px;border:1px dashed #b6c6d8;border-radius:14px;background:#fbfdff;padding:14px;color:var(--ink);outline:none}.notes:empty:before{content:attr(data-placeholder);color:#98a2b3}.step-list{counter-reset:step;padding-left:0;list-style:none}.step-list li{position:relative;padding-left:44px;margin:12px 0}.step-list li:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--pln-blue);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+    .footer{color:var(--muted);font-size:12px;text-align:center;margin-top:34px}@media(max-width:850px){.span-8,.span-6,.span-4{grid-column:span 12}.hero{padding:34px 24px}.hero h1{font-size:26px}}@media print{.toolbar{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}.hero{padding:26px 34px}.wrap{padding:20px 10px}.shot{break-inside:avoid}}
+  </style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">Participant Case Guide · Final Dashboard Version · PLN BI Training</div>
+  <h1>Studi Kasus #2 — Bisnis SPKLU: Rendahnya Profitabilitas dan Kontribusi terhadap Pendapatan</h1>
+  <p>Panduan peserta untuk menggunakan dashboard Power BI final dalam menganalisis profitabilitas SPKLU, diagnosis lokasi, strategi partnership, dan simulasi commercial vs regulatory-adjusted.</p>
+</header>
+<div class="toolbar"><div class="toolbar-inner"><button class="primary" onclick="window.print()">Cetak / Simpan PDF</button><button onclick="clearNotes()">Hapus Catatan</button><a class="pill-link" href="#page1">Page 1</a><a class="pill-link" href="#page2">Page 2</a><a class="pill-link" href="#page3">Page 3</a><a class="pill-link" href="#page4">Page 4</a><a class="pill-link" href="#final-template">Template Jawaban</a></div></div>
+<main class="wrap">
+  <section class="grid">
+    <div class="card span-8">
+      <h2>1. Latar Belakang Kasus</h2>
+      <p>Pembangunan <strong>SPKLU</strong> dilakukan secara agresif untuk mendukung percepatan adopsi kendaraan listrik nasional. Namun, tingkat utilisasi SPKLU masih relatif rendah dan kontribusinya terhadap profitabilitas belum optimal.</p>
+      <p>Di saat yang sama, beberapa pemain swasta tetap melakukan ekspansi jaringan EV charger secara masif. Hal ini menimbulkan pertanyaan strategis: apakah ekspansi mereka didorong oleh profit charging fee langsung, model bisnis yang lebih ringan, captive demand, partnership, atau nilai ekosistem jangka panjang?</p>
+      <div class="callout"><strong>Tantangan utama peserta:</strong> gunakan dashboard untuk menentukan strategi bisnis SPKLU yang paling layak bagi PLN dengan mempertimbangkan revenue, profit, utilisasi, lokasi, charger type, partnership, dan dampak regulatory constraint.</div>
+    </div>
+    <div class="card span-4">
+      <h2>Peran Peserta</h2>
+      <p>Anda berperan sebagai tim manajemen PLN yang diminta menyusun rekomendasi strategi SPKLU.</p>
+      <span class="tag">Profitability</span><span class="tag yellow">Location Diagnosis</span><span class="tag green">Partnership</span><span class="tag red">Regulatory Constraint</span><span class="tag purple">What-if Parameter</span>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>2. Cara Membaca Dashboard</h2>
+    <table>
+      <thead><tr><th>Page</th><th>Judul Final Dashboard</th><th>Pertanyaan Manajerial</th><th>Output Peserta</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Executive Profitability Overview</td><td>Apakah SPKLU sudah profitable atau baru menghasilkan revenue?</td><td>Diagnosis awal profitabilitas portofolio.</td></tr>
+        <tr><td>2</td><td>Location & Utilization</td><td>Lokasi mana yang sehat, berisiko, atau hanya bersifat coverage?</td><td>Segmentasi lokasi dan karakteristik site yang layak diprioritaskan.</td></tr>
+        <tr><td>3</td><td>Business Model & Partnership</td><td>Model bisnis apa yang menjelaskan mengapa ekspansi bisa tetap menarik?</td><td>Rekomendasi partnership dan portfolio business model.</td></tr>
+        <tr><td>4</td><td>What-if Analysis</td><td>Strategi mana yang tetap layak setelah regulatory-adjusted view diperhitungkan?</td><td>Pilihan skenario dan asumsi parameter yang paling masuk akal.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warning"><strong>Catatan eksplorasi:</strong> pada Page 1–3 gunakan filter lokasi, kategori, charger type, partnership, dan tahun 2025. Pada Page 4, pilih <strong>satu regulatory mode</strong> dan <strong>satu scenario</strong> ketika menyimpulkan KPI; jika tidak, angka KPI dapat menjadi agregat lintas skenario.</div>
+  </section>
+
+  <section class="card page-block" id="page1" style="margin-top:18px;">
+    <h2>Page 1 — Executive Profitability Overview</h2>
+    <div class="shot"><img src="assets/page1_executive_overview.png" alt="Screenshot Page 1 Executive Profitability Overview"><div class="caption">Dashboard final Page 1: KPI revenue/profit/margin, trend revenue vs profit, profit by kategori lokasi, profit by lokasi, dan profitability status.</div></div>
+    <h3>Tujuan Page</h3>
+    <p>Menentukan apakah isu SPKLU adalah masalah volume transaksi semata atau masalah <strong>portfolio profitability</strong>.</p>
+    <h3>Visual yang Perlu Diamati</h3>
+    <table><thead><tr><th>Visual</th><th>Apa yang Dicari</th><th>Pertanyaan untuk Dijawab</th></tr></thead><tbody>
+      <tr><td>KPI Revenue, Profit, Profit Margin</td><td>Perbandingan kontribusi pendapatan dan profitabilitas.</td><td>Apakah revenue yang ada sudah berubah menjadi profit?</td></tr>
+      <tr><td>KPI Profitable Sites dan Loss Making Sites</td><td>Berapa banyak site yang sudah sehat secara finansial.</td><td>Apakah masalah terjadi di mayoritas portofolio?</td></tr>
+      <tr><td>Revenue vs. Profit Trend</td><td>Pergerakan bulanan revenue dan profit.</td><td>Apakah revenue bergerak lebih baik daripada profit?</td></tr>
+      <tr><td>Profit by Kategori Lokasi</td><td>Kategori lokasi yang positif atau negatif.</td><td>Apakah semua lokasi ramai otomatis profitable?</td></tr>
+      <tr><td>Profit by Lokasi</td><td>Site terbaik dan terburuk.</td><td>Lokasi mana yang perlu dievaluasi lebih lanjut?</td></tr>
+      <tr><td>Profitability Status</td><td>Klasifikasi profitable, loss making, near break-even.</td><td>Apakah ada banyak lokasi yang dekat break-even dan bisa dioptimasi?</td></tr>
+    </tbody></table>
+    <h3>Langkah Eksplorasi Peserta</h3>
+    <ol class="step-list">
+      <li>Mulai dari kondisi seluruh region dan seluruh kategori lokasi pada tahun 2025.</li>
+      <li>Bandingkan kartu revenue dengan profit dan profit margin.</li>
+      <li>Lihat apakah grafik revenue vs profit menunjukkan gap yang konsisten.</li>
+      <li>Klik kategori lokasi yang profitnya positif, lalu bandingkan dengan kategori yang negatif.</li>
+      <li>Gunakan bar chart lokasi untuk menemukan site yang paling sehat dan paling bermasalah.</li>
+    </ol>
+    <h3>Catatan Peserta</h3><div class="notes" contenteditable="true" data-key="p1" data-placeholder="Tulis diagnosis awal: apakah masalah utamanya revenue, profit, lokasi, atau model portofolio?"></div>
+  </section>
+
+  <section class="card page-block" id="page2" style="margin-top:18px;">
+    <h2>Page 2 — Location & Utilization</h2>
+    <div class="shot"><img src="assets/page2_location_utilization.png" alt="Screenshot Page 2 Location and Utilization"><div class="caption">Dashboard final Page 2: scatter utilization vs profit, revenue vs profit by category, location detail, dan competitor count.</div></div>
+    <h3>Tujuan Page</h3>
+    <p>Mendiagnosis apakah lokasi dengan utilisasi atau traffic lebih tinggi benar-benar menghasilkan profit yang lebih baik.</p>
+    <h3>Visual yang Perlu Diamati</h3>
+    <table><thead><tr><th>Visual</th><th>Apa yang Dicari</th><th>Implikasi Analisis</th></tr></thead><tbody>
+      <tr><td>Avg Utilization, Avg Uptime, Avg Payback</td><td>Indikator kesehatan operasional dan investasi.</td><td>Utilisasi dan uptime tinggi belum cukup jika payback terlalu panjang.</td></tr>
+      <tr><td>Utilization vs. Profit Scatter</td><td>Site dengan utilisasi tinggi tetapi profit rendah, atau utilisasi sedang tetapi profit positif.</td><td>Membedakan demand issue dan cost structure issue.</td></tr>
+      <tr><td>Revenue vs. Profit by Category</td><td>Kategori yang revenue-nya besar tetapi profitnya lemah.</td><td>Traffic tinggi belum tentu margin tinggi.</td></tr>
+      <tr><td>Location Detail Table</td><td>Lokasi, charger type, utilization, profit, dan payback.</td><td>Menentukan site yang perlu expand, optimize, partner, atau hold.</td></tr>
+      <tr><td>Competitor Count</td><td>Intensitas kehadiran kompetitor per kategori lokasi.</td><td>Menilai apakah pemain swasta mengejar lokasi tertentu karena traffic, ecosystem, atau partnership.</td></tr>
+    </tbody></table>
+    <h3>Langkah Eksplorasi Peserta</h3>
+    <ol class="step-list">
+      <li>Amati nilai rata-rata utilization, uptime, dan payback pada kondisi seluruh lokasi.</li>
+      <li>Lihat scatter plot: temukan cluster lokasi yang profit positif dan negatif.</li>
+      <li>Klik kategori <strong>Fleet Depot</strong> dan amati pola utilization/profit.</li>
+      <li>Klik kategori <strong>Rest Area</strong> dan bandingkan revenue terhadap profit.</li>
+      <li>Cek detail lokasi yang paling ekstrem: site profit tertinggi dan site loss terbesar.</li>
+      <li>Bandingkan dengan competitor count untuk melihat kategori yang menarik bagi pemain swasta.</li>
+    </ol>
+    <h3>Catatan Peserta</h3><div class="notes" contenteditable="true" data-key="p2" data-placeholder="Tulis temuan lokasi: kategori/site mana yang sehat, mana yang rugi, dan apa kemungkinan penyebabnya?"></div>
+  </section>
+
+  <section class="card page-block" id="page3" style="margin-top:18px;">
+    <h2>Page 3 — Business Model & Partnership</h2>
+    <div class="shot"><img src="assets/page3_business_model.png" alt="Screenshot Page 3 Business Model and Partnership"><div class="caption">Dashboard final Page 3: profit by partnership model, revenue vs profit by partnership, capex exposure vs profit, dan private player strategy.</div></div>
+    <h3>Tujuan Page</h3>
+    <p>Mengidentifikasi model bisnis yang membuat ekspansi SPKLU lebih layak, terutama ketika utilisasi pasar belum matang.</p>
+    <h3>Visual yang Perlu Diamati</h3>
+    <table><thead><tr><th>Visual</th><th>Apa yang Dicari</th><th>Implikasi Analisis</th></tr></thead><tbody>
+      <tr><td>Partnership Profit, Margin, CapEx Exposure, Avg Payback</td><td>Apakah model bisnis saat ini terlalu asset heavy.</td><td>Profitabilitas harus dibaca bersama capital exposure.</td></tr>
+      <tr><td>Profit by Partnership Model</td><td>Model kerja sama yang positif atau negatif.</td><td>PLN Owned belum tentu paling baik walaupun revenue share tinggi.</td></tr>
+      <tr><td>Revenue vs. Profit by Partnership</td><td>Model dengan revenue tinggi tetapi profit rendah.</td><td>Revenue share besar dapat tertutup oleh biaya dan capex.</td></tr>
+      <tr><td>CapEx Exposure vs. Profit</td><td>Trade-off asset heavy vs asset light.</td><td>Strategi swasta sering menekan risiko investasi langsung.</td></tr>
+      <tr><td>Private Player Strategy</td><td>Logika ekspansi swasta: asset-light, captive fleet, premium corridor, retail bundling.</td><td>Menarik lesson untuk strategi PLN.</td></tr>
+    </tbody></table>
+    <h3>Langkah Eksplorasi Peserta</h3>
+    <ol class="step-list">
+      <li>Bandingkan profit antar partnership model.</li>
+      <li>Klik <strong>PLN Owned</strong> dan amati revenue, profit, capex exposure, serta payback.</li>
+      <li>Klik <strong>Fleet Partnership</strong> dan bandingkan dengan PLN Owned.</li>
+      <li>Amati scatter CapEx Exposure vs Profit untuk melihat model yang lebih asset-light.</li>
+      <li>Baca tabel Private Player Strategy dan tentukan lesson yang relevan untuk PLN.</li>
+    </ol>
+    <h3>Catatan Peserta</h3><div class="notes" contenteditable="true" data-key="p3" data-placeholder="Tulis rekomendasi model bisnis: lokasi atau partnership mana yang layak diprioritaskan dan mengapa?"></div>
+  </section>
+
+  <section class="card page-block" id="page4" style="margin-top:18px;">
+    <h2>Page 4 — What-if Analysis</h2>
+    <div class="shot"><img src="assets/page4_whatif.png" alt="Screenshot Page 4 What-if Analysis"><div class="caption">Dashboard final Page 4: regulatory mode, scenario, scenario profit by mode, regulatory impact waterfall, dan panel parameter.</div></div>
+    <h3>Tujuan Page</h3>
+    <p>Menguji apakah strategi yang tampak menarik secara komersial tetap layak setelah regulatory-adjusted view dihitung.</p>
+    <div class="callout warning"><strong>Penting:</strong> untuk menyimpulkan KPI scenario, pilih satu <em>Regulatory Mode</em> dan satu <em>Scenario</em>. Jika tidak, KPI akan menjumlahkan banyak skenario dan tidak merepresentasikan satu keputusan tertentu.</div>
+    <h3>Visual dan Parameter yang Perlu Diamati</h3>
+    <table><thead><tr><th>Elemen</th><th>Fungsi</th><th>Pertanyaan Peserta</th></tr></thead><tbody>
+      <tr><td>Regulatory Mode</td><td>Membandingkan Commercial View dan Regulatory-Adjusted View.</td><td>Apakah keputusan masih menarik setelah regulatory constraint masuk?</td></tr>
+      <tr><td>Scenario</td><td>Memilih Baseline, Demand Growth, Commercial Optimization, Partnership Shift, atau Aggressive Expansion.</td><td>Skenario mana yang paling realistis?</td></tr>
+      <tr><td>Scenario Profit by Mode</td><td>Membandingkan profit antar skenario dan mode.</td><td>Apakah skenario paling agresif tetap terbaik?</td></tr>
+      <tr><td>Regulatory Impact Waterfall</td><td>Memecah dampak regulasi terhadap profit.</td><td>Faktor regulasi mana yang paling menggerus hasil?</td></tr>
+      <tr><td>What-if Parameters</td><td>Utilization uplift, tariff uplift, service fee uplift, opex efficiency, partner capex relief.</td><td>Asumsi mana yang paling sensitif terhadap profit?</td></tr>
+    </tbody></table>
+    <h3>Langkah Eksplorasi Peserta</h3>
+    <ol class="step-list">
+      <li>Mulai dengan <strong>Baseline 2025 Actual</strong>, lalu bandingkan Commercial View dan Regulatory-Adjusted View.</li>
+      <li>Pilih <strong>Commercial Optimization</strong> untuk melihat apakah strategi komersial murni cukup memperbaiki profit.</li>
+      <li>Ganti ke Regulatory-Adjusted View dan amati perubahan profit/margin.</li>
+      <li>Pilih <strong>Aggressive Expansion</strong> lalu bandingkan hasilnya sebelum dan sesudah regulasi.</li>
+      <li>Pilih <strong>Partnership Shift / Recommended</strong> dan nilai apakah skenario ini tetap viable setelah regulasi.</li>
+      <li>Gunakan slider parameter secara bertahap untuk menguji sensitivitas asumsi, bukan mengubah semua parameter sekaligus.</li>
+    </ol>
+    <h3>Catatan Peserta</h3><div class="notes" contenteditable="true" data-key="p4" data-placeholder="Tulis pilihan skenario akhir, alasan, parameter yang paling berpengaruh, dan risiko regulasi yang harus diperhatikan."></div>
+  </section>
+
+  <section class="card" id="final-template" style="margin-top:18px;">
+    <h2>Template Jawaban Akhir Peserta</h2>
+    <table><thead><tr><th>Komponen</th><th>Isi Jawaban Anda</th></tr></thead><tbody>
+      <tr><td>Diagnosis utama</td><td><div class="notes" contenteditable="true" data-key="final1" data-placeholder="Apa masalah utama bisnis SPKLU berdasarkan dashboard?"></div></td></tr>
+      <tr><td>Lokasi/kategori prioritas</td><td><div class="notes" contenteditable="true" data-key="final2" data-placeholder="Kategori atau site mana yang perlu expand, optimize, partner, hold, atau reposition?"></div></td></tr>
+      <tr><td>Model bisnis yang direkomendasikan</td><td><div class="notes" contenteditable="true" data-key="final3" data-placeholder="Partnership/model bisnis apa yang paling layak untuk PLN?"></div></td></tr>
+      <tr><td>Skenario what-if</td><td><div class="notes" contenteditable="true" data-key="final4" data-placeholder="Skenario mana yang dipilih dan apakah tetap layak setelah regulatory-adjusted view?"></div></td></tr>
+      <tr><td>Risiko dan asumsi</td><td><div class="notes" contenteditable="true" data-key="final5" data-placeholder="Risiko regulasi, komersial, demand, capex, atau operasional apa yang perlu dikelola?"></div></td></tr>
+    </tbody></table>
+    <div class="callout decision"><strong>Output akhir:</strong> rekomendasi peserta harus menjelaskan keputusan portofolio SPKLU, bukan hanya menyebut lokasi atau skenario dengan angka profit tertinggi.</div>
+  </section>
+  <div class="footer">PLN BI Training · Studi Kasus #2 SPKLU · Participant Guide · Final Dashboard Version</div>
+</main>
+<script>
+  document.querySelectorAll('.notes').forEach(function(el){var key='case2-participant-final-'+(el.dataset.key||Math.random());el.dataset.storeKey=key;var saved=localStorage.getItem(key);if(saved){el.innerHTML=saved;}el.addEventListener('input',function(){localStorage.setItem(key,el.innerHTML);});});
+  function clearNotes(){if(confirm('Hapus semua catatan pada halaman ini?')){document.querySelectorAll('.notes').forEach(function(el){localStorage.removeItem(el.dataset.storeKey);el.innerHTML='';});}}
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Participant Guide - Case #1 PLN Sales Final Dashboard</title>
+  <style>
+:root{
+  --pln-blue:#0b4f93;--pln-blue-2:#073864;--pln-cyan:#00a3e0;--pln-yellow:#ffd100;
+  --ink:#172033;--muted:#667085;--bg:#f5f7fb;--card:#fff;--line:#d9e2ef;
+  --soft-blue:#eaf4ff;--soft-yellow:#fff7d1;--soft-green:#e9f8ef;--soft-red:#fff0f0;--soft-purple:#f3efff;
+  --shadow:0 10px 25px rgba(16,24,40,.08);--radius:18px;
+}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+.hero{background:linear-gradient(135deg,var(--pln-blue),var(--pln-blue-2) 66%,#072a4a);color:#fff;padding:44px 52px;border-bottom:7px solid var(--pln-yellow)}
+.hero .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;opacity:.9;font-weight:700}.hero h1{margin:12px 0 10px;font-size:34px;line-height:1.18;max-width:1160px}.hero p{max-width:1040px;font-size:16px;opacity:.94;margin:0}
+.toolbar{position:sticky;top:0;z-index:10;background:rgba(245,247,251,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(217,226,239,.85)}
+.toolbar-inner{max-width:1220px;margin:0 auto;padding:12px 24px;display:flex;gap:10px;flex-wrap:wrap}
+button,.pill-link{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 14px;color:var(--ink);font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 2px 7px rgba(16,24,40,.05)}button.primary{background:var(--pln-blue);color:#fff;border-color:var(--pln-blue)}
+.wrap{max-width:1220px;margin:0 auto;padding:28px 24px 70px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-6{grid-column:span 6}.span-4{grid-column:span 4}
+h2{color:var(--pln-blue);margin:4px 0 14px;font-size:24px}h3{margin:20px 0 10px;font-size:18px;color:#123b63}h4{margin:16px 0 8px;font-size:15px;color:#1d4f7b}p{margin:8px 0 12px}.small{color:var(--muted);font-size:13px}.tag{display:inline-block;border-radius:999px;padding:4px 10px;background:var(--soft-blue);color:#074b86;font-weight:700;font-size:12px;margin:0 4px 6px 0}.tag.yellow{background:var(--soft-yellow);color:#694b00}.tag.green{background:var(--soft-green);color:#087443}.tag.red{background:var(--soft-red);color:#9f1b1b}.tag.purple{background:var(--soft-purple);color:#53389e}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:14px}th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top}th{background:#edf5ff;color:#123b63;text-align:left}tr:nth-child(even) td{background:#fafcff}
+.callout{border-left:5px solid var(--pln-cyan);background:#eef9ff;padding:14px 16px;border-radius:12px;margin:14px 0}.callout.warning{border-left-color:var(--pln-yellow);background:#fff9df}.callout.decision,.callout.answer{border-left-color:#12b76a;background:#effcf5}.callout.red{border-left-color:#f04438;background:#fff4f4}.page-block{border-top:6px solid var(--pln-blue)}
+.shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;margin:14px 0}.shot img{display:block;width:100%;height:auto}.shot .caption{padding:9px 12px;color:var(--muted);font-size:12px;background:#fbfdff;border-top:1px solid var(--line)}
+.notes{width:100%;min-height:115px;border:1px dashed #b6c6d8;border-radius:14px;background:#fbfdff;padding:14px;color:var(--ink);outline:none}.notes:empty:before{content:attr(data-placeholder);color:#98a2b3}.step-list{counter-reset:step;padding-left:0;list-style:none}.step-list li{position:relative;padding-left:44px;margin:12px 0}.step-list li:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--pln-blue);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700}.cheat{background:#0b315c;color:#fff;border-color:#0b315c}.cheat h2,.cheat h3{color:#fff}.cheat table th{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.25)}.cheat table td{border-color:rgba(255,255,255,.25);background:transparent}
+.footer{color:var(--muted);font-size:12px;text-align:center;margin-top:34px}@media(max-width:850px){.span-8,.span-6,.span-4{grid-column:span 12}.hero{padding:34px 24px}.hero h1{font-size:26px}}@media print{.toolbar{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}.hero{padding:26px 34px}.wrap{padding:20px 10px}.shot{break-inside:avoid}.cheat{color:#000;background:#fff;border-color:var(--line)}.cheat h2,.cheat h3{color:var(--pln-blue)}.cheat table th{background:#edf5ff;color:#123b63;border-color:var(--line)}.cheat table td{border-color:var(--line)}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">Participant Case Guide · Final Dashboard Version · PLN BI Training</div>
+  <h1>Studi Kasus #1 — Optimalisasi Pertumbuhan Penjualan Listrik Segmen Industri & Bisnis</h1>
+  <p>Panduan peserta untuk menggunakan dashboard Power BI final dalam menganalisis stagnasi penjualan, gap peluang, akar masalah, prioritas strategi, dan skenario what-if.</p>
+</header>
+<div class="toolbar"><div class="toolbar-inner"><button class="primary" onclick="window.print()">Cetak / Simpan PDF</button><button onclick="clearNotes()">Hapus Catatan</button><a class="pill-link" href="#page1">Page 1</a><a class="pill-link" href="#page2">Page 2</a><a class="pill-link" href="#page3">Page 3</a><a class="pill-link" href="#page4">Page 4</a><a class="pill-link" href="#final-template">Template Jawaban</a></div></div>
+<main class="wrap">
+  <section class="grid">
+    <div class="card span-8">
+      <h2>1. Latar Belakang Kasus</h2>
+      <p>Selama tiga tahun terakhir, pertumbuhan penjualan listrik pada segmen <strong>Industri</strong> dan <strong>Bisnis</strong> di Wilayah PLN X cenderung tertahan. Padahal, wilayah ini sedang berkembang melalui kawasan industri, pusat bisnis, hotel, restoran, dan fasilitas komersial baru.</p>
+      <p>Manajemen perlu memahami apakah stagnasi disebabkan oleh rendahnya potensi pasar, rendahnya konversi pelanggan baru, kendala penyambungan, utilisasi pelanggan aktif, atau faktor operasional tertentu.</p>
+      <div class="callout"><strong>Tantangan peserta:</strong> gunakan dashboard untuk menjawab mengapa potensi pertumbuhan wilayah belum sepenuhnya berubah menjadi penjualan listrik, lalu susun rekomendasi strategi yang terarah.</div>
+    </div>
+    <div class="card span-4">
+      <h2>Peran Peserta</h2>
+      <p>Anda berperan sebagai tim manajemen PLN Wilayah X yang diminta memberikan rekomendasi strategi pertumbuhan penjualan.</p>
+      <span class="tag">Sales Gap</span><span class="tag yellow">Opportunity Gap</span><span class="tag green">Root Cause</span><span class="tag red">Strategic Priority</span><span class="tag purple">What-if Scenario</span>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:18px;">
+    <h2>2. Cara Membaca Dashboard</h2>
+    <table>
+      <thead><tr><th>Page</th><th>Judul Final Dashboard</th><th>Pertanyaan Manajerial</th><th>Output Peserta</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>PLN Sales Executive Overview</td><td>Apakah gap penjualan nyata dan di mana masalah terkonsentrasi?</td><td>Area/segmen prioritas untuk investigasi.</td></tr>
+        <tr><td>2</td><td>Sales Gap & Opportunity</td><td>Apakah pasar tidak ada, atau peluang belum terealisasi?</td><td>Diagnosis opportunity leakage dan funnel konversi.</td></tr>
+        <tr><td>3</td><td>Strategic Priority Analysis</td><td>Akar masalah apa yang paling actionable?</td><td>Prioritas intervensi berdasarkan recoverable sales dan feasibility.</td></tr>
+        <tr><td>4</td><td>Scenario What-if Analysis</td><td>Skenario mana yang memberi dampak terbaik dengan risiko realistis?</td><td>Rekomendasi skenario dan estimasi dampak.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warning"><strong>Catatan eksplorasi:</strong> Page 1 memakai tren tiga tahun dan dapat difilter oleh Year serta Segmen. Page 2–3 fokus pada peluang dan akar masalah. Page 4 memakai scenario selector; pilih satu skenario saat membaca KPI utama.</div>
+  </section>
+
+  <section class="card page-block" id="page1" style="margin-top:18px;">
+    <h2>Page 1 — PLN Sales Executive Overview</h2>
+    <div class="shot"><img src="assets/page1_executive_overview.png" alt="Screenshot Page 1 PLN Sales Executive Overview"><div class="caption">Dashboard final Page 1: KPI sales, actual vs target, sales gap by area, gap area x segment, dan actual sales by area.</div></div>
+    <h3>Tujuan Page</h3>
+    <p>Menentukan apakah gap penjualan benar-benar material, apakah tren aktual tertinggal dari target, dan area/segmen mana yang perlu menjadi fokus investigasi.</p>
+    <h3>Visual yang Perlu Diamati</h3>
+    <table><thead><tr><th>Visual</th><th>Apa yang Dicari</th><th>Pertanyaan Peserta</th></tr></thead><tbody>
+      <tr><td>KPI Actual Sales, Achievement, Gap, Lost Revenue</td><td>Skala masalah penjualan secara agregat.</td><td>Apakah gap cukup besar untuk ditindaklanjuti?</td></tr>
+      <tr><td>Actual Sales vs Target</td><td>Jarak aktual terhadap target sepanjang waktu.</td><td>Apakah masalah muncul konsisten atau hanya satu bulan?</td></tr>
+      <tr><td>Sales Gap by Area</td><td>Area dengan gap terbesar.</td><td>Area mana yang paling menahan pertumbuhan wilayah?</td></tr>
+      <tr><td>Gap by Area x Segment</td><td>Segmen penyumbang gap di masing-masing area.</td><td>Apakah masalah dominan di Industri atau Bisnis?</td></tr>
+      <tr><td>Actual Sales by Area</td><td>Kontribusi aktual tiap area.</td><td>Apakah area dengan penjualan besar juga memiliki gap besar?</td></tr>
+    </tbody></table>
+    <h3>Langkah Eksplorasi Peserta</h3>
+    <ol class="step-list"><li>Lihat KPI tanpa filter untuk memahami total sales gap dan lost revenue.</li><li>Amati line chart actual vs target untuk melihat apakah gap melebar sepanjang periode.</li><li>Lihat bar chart <strong>Sales Gap by Area</strong> untuk menemukan area prioritas.</li><li>Gunakan matrix <strong>Gap by Area x Segment</strong> untuk mengidentifikasi segmen dominan di tiap area.</li><li>Klik area <strong>KI Beta - Prioritas</strong> dan <strong>CBD Delta - Prioritas</strong> untuk membandingkan karakter masalah.</li></ol>
+    <h3>Pertanyaan Peserta</h3>
+    <table><thead><tr><th>No.</th><th>Pertanyaan</th></tr></thead><tbody>
+      <tr><td>1</td><td>Apakah gap penjualan cukup material terhadap target?</td></tr><tr><td>2</td><td>Area mana yang paling banyak menyumbang sales gap?</td></tr><tr><td>3</td><td>Apakah gap tersebut lebih dominan pada segmen Industri atau Bisnis?</td></tr><tr><td>4</td><td>Apakah perlu strategi seluruh wilayah, atau cukup fokus pada area tertentu dahulu?</td></tr>
+    </tbody></table>
+    <h3>Catatan Peserta</h3><div class="notes" contenteditable="true" data-note-id="p1" data-placeholder="Tulis temuan Page 1 di sini..."></div>
+  </section>
+
+  <section class="card page-block" id="page2" style="margin-top:18px;">
+    <h2>Page 2 — Sales Gap & Opportunity</h2>
+    <div class="shot"><img src="assets/page2_gap_analysis.png" alt="Screenshot Page 2 Sales Gap and Opportunity"><div class="caption">Dashboard final Page 2: potential vs realized, sales funnel, opportunity detail, dan slicer area/segmen/subsegmen.</div></div>
+    <h3>Tujuan Page</h3>
+    <p>Menguji apakah stagnasi disebabkan oleh tidak adanya potensi pasar atau karena potensi yang sudah ada belum berhasil berubah menjadi konsumsi listrik aktual.</p>
+    <h3>Visual yang Perlu Diamati</h3>
+    <table><thead><tr><th>Visual</th><th>Apa yang Dicari</th><th>Pertanyaan Peserta</th></tr></thead><tbody>
+      <tr><td>KPI Potential, Realized, Opportunity Gap, Capture Rate</td><td>Besarnya peluang dan tingkat realisasi.</td><td>Apakah potensi pasar tersedia?</td></tr>
+      <tr><td>Potential vs Realized GWh</td><td>Area dengan jarak terbesar antara potensi dan realisasi.</td><td>Area mana yang memiliki peluang belum tertangkap terbesar?</td></tr>
+      <tr><td>PLN Sales Funnel</td><td>Tahap konversi yang mengalami penurunan terbesar.</td><td>Di tahap mana peluang paling banyak hilang?</td></tr>
+      <tr><td>Opportunity Detail</td><td>Subsegmen dengan potential dan opportunity gap tertinggi.</td><td>Jenis pelanggan apa yang perlu difokuskan?</td></tr>
+    </tbody></table>
+    <h3>Langkah Eksplorasi Peserta</h3>
+    <ol class="step-list"><li>Lihat KPI total: potential, realized, opportunity gap, dan capture rate.</li><li>Bandingkan area pada chart <strong>Potential vs. Realized GWh</strong>.</li><li>Pilih area <strong>KI Beta - Prioritas</strong> untuk melihat gap industri terbesar.</li><li>Pilih area <strong>CBD Delta - Prioritas</strong> untuk melihat peluang bisnis yang belum optimal.</li><li>Amati funnel: tentukan apakah masalah terjadi sebelum koneksi atau setelah pelanggan aktif.</li><li>Gunakan tabel <strong>Opportunity Detail</strong> untuk melihat subsegmen seperti pabrik, mall, hotel, restoran, atau cold storage.</li></ol>
+    <h3>Pertanyaan Peserta</h3>
+    <table><thead><tr><th>No.</th><th>Pertanyaan</th></tr></thead><tbody>
+      <tr><td>1</td><td>Apakah stagnasi terjadi karena potensi pasar tidak tersedia?</td></tr><tr><td>2</td><td>Area mana yang memiliki opportunity gap terbesar?</td></tr><tr><td>3</td><td>Apakah leakage terbesar terjadi pada tahap engagement, survey, koneksi, atau konsumsi aktif?</td></tr><tr><td>4</td><td>Subsegmen apa yang menjadi target paling relevan?</td></tr>
+    </tbody></table>
+    <h3>Catatan Peserta</h3><div class="notes" contenteditable="true" data-note-id="p2" data-placeholder="Tulis temuan Page 2 di sini..."></div>
+  </section>
+
+  <section class="card page-block" id="page3" style="margin-top:18px;">
+    <h2>Page 3 — Strategic Priority Analysis</h2>
+    <div class="shot"><img src="assets/page3_rca_priority.png" alt="Screenshot Page 3 Strategic Priority Analysis"><div class="caption">Dashboard final Page 3: recoverable sales, root cause, recommended intervention, impact vs feasibility, dan priority table.</div></div>
+    <h3>Tujuan Page</h3>
+    <p>Mengubah diagnosis menjadi prioritas tindakan: akar masalah mana yang paling material, recoverable, dan layak dieksekusi.</p>
+    <h3>Visual yang Perlu Diamati</h3>
+    <table><thead><tr><th>Visual</th><th>Apa yang Dicari</th><th>Pertanyaan Peserta</th></tr></thead><tbody>
+      <tr><td>KPI Recoverable GWh, Revenue, Feasibility</td><td>Potensi yang realistis ditindaklanjuti dan kelayakan rata-rata.</td><td>Berapa besar peluang yang benar-benar recoverable?</td></tr>
+      <tr><td>Recoverable GWh by Root Cause</td><td>Akar masalah terbesar.</td><td>Penyebab mana yang paling material?</td></tr>
+      <tr><td>Recoverable GWh by Recommended Intervention</td><td>Program dengan potensi terbesar.</td><td>Intervensi apa yang harus diprioritaskan?</td></tr>
+      <tr><td>Impact vs Feasibility</td><td>Trade-off antara dampak dan kemudahan.</td><td>Apakah strategi terbesar juga paling feasible?</td></tr>
+      <tr><td>Priority Table</td><td>Area, segmen, root cause, dan intervensi.</td><td>Di mana intervensi harus dilakukan?</td></tr>
+    </tbody></table>
+    <h3>Langkah Eksplorasi Peserta</h3>
+    <ol class="step-list"><li>Lihat total recoverable sales dan recoverable revenue.</li><li>Amati waterfall <strong>Root Cause</strong> untuk melihat driver terbesar.</li><li>Bandingkan bar <strong>Recommended Intervention</strong>.</li><li>Klik <strong>KI Beta - Prioritas</strong> dan lihat apakah intervensinya terkait pelanggan industri.</li><li>Klik <strong>CBD Delta - Prioritas</strong> dan lihat apakah intervensinya terkait aktivasi/utilisasi bisnis.</li><li>Gunakan scatter untuk membahas trade-off antara dampak dan feasibility.</li></ol>
+    <h3>Pertanyaan Peserta</h3>
+    <table><thead><tr><th>No.</th><th>Pertanyaan</th></tr></thead><tbody>
+      <tr><td>1</td><td>Akar masalah mana yang paling besar menyumbang recoverable sales?</td></tr><tr><td>2</td><td>Intervensi apa yang paling berdampak?</td></tr><tr><td>3</td><td>Mana yang menjadi strategi utama dan mana yang menjadi quick win?</td></tr><tr><td>4</td><td>Apakah reliability perlu menjadi solusi utama seluruh wilayah?</td></tr>
+    </tbody></table>
+    <h3>Catatan Peserta</h3><div class="notes" contenteditable="true" data-note-id="p3" data-placeholder="Tulis temuan Page 3 di sini..."></div>
+  </section>
+
+  <section class="card page-block" id="page4" style="margin-top:18px;">
+    <h2>Page 4 — Scenario What-if Analysis</h2>
+    <div class="shot"><img src="assets/page4_whatif.png" alt="Screenshot Page 4 Scenario What-if Analysis"><div class="caption">Dashboard final Page 4: scenario selector, scenario KPI, incremental comparison, baseline vs simulated vs target, intervention detail, dan decision narrative.</div></div>
+    <h3>Tujuan Page</h3>
+    <p>Melihat dampak skenario strategi terhadap incremental sales, incremental revenue, gap closed, dan target achievement setelah intervensi.</p>
+    <h3>Visual yang Perlu Diamati</h3>
+    <table><thead><tr><th>Visual</th><th>Apa yang Dicari</th><th>Pertanyaan Peserta</th></tr></thead><tbody>
+      <tr><td>Scenario Selector</td><td>Conservative, Targeted / Recommended, Aggressive.</td><td>Skenario mana yang paling layak direkomendasikan?</td></tr>
+      <tr><td>Scenario KPI</td><td>Incremental GWh, revenue, gap closed, achievement after.</td><td>Seberapa besar dampak strategi?</td></tr>
+      <tr><td>Comparison Incremental GWh</td><td>Perbandingan dampak antar skenario.</td><td>Apakah dampak terbesar otomatis terbaik?</td></tr>
+      <tr><td>Baseline vs Simulated vs Target</td><td>Posisi sales setelah skenario terhadap target.</td><td>Apakah skenario cukup menutup gap?</td></tr>
+      <tr><td>Scenario Detail Incremental by Intervention</td><td>Kontribusi program terhadap incremental sales.</td><td>Intervensi mana yang paling berkontribusi?</td></tr>
+    </tbody></table>
+    <h3>Langkah Eksplorasi Peserta</h3>
+    <ol class="step-list"><li>Pilih <strong>Conservative</strong> untuk melihat dampak minimum.</li><li>Pilih <strong>Targeted / Recommended</strong> untuk melihat strategi fokus KI Beta dan CBD Delta.</li><li>Pilih <strong>Aggressive</strong> untuk melihat dampak maksimum dan diskusikan risiko/effort.</li><li>Kembali ke <strong>Targeted / Recommended</strong> dan amati kontribusi intervensi.</li><li>Susun rekomendasi akhir berdasarkan dampak, feasibility, dan fokus area.</li></ol>
+    <h3>Pertanyaan Peserta</h3>
+    <table><thead><tr><th>No.</th><th>Pertanyaan</th></tr></thead><tbody>
+      <tr><td>1</td><td>Skenario mana yang memberikan perbaikan signifikan tetapi masih realistis?</td></tr><tr><td>2</td><td>Apa driver utama incremental sales dalam skenario Targeted?</td></tr><tr><td>3</td><td>Mengapa skenario Aggressive tidak otomatis menjadi pilihan utama?</td></tr><tr><td>4</td><td>Apakah strategi akhir lebih tepat berupa satu program atau portofolio intervensi?</td></tr>
+    </tbody></table>
+    <h3>Catatan Peserta</h3><div class="notes" contenteditable="true" data-note-id="p4" data-placeholder="Tulis temuan Page 4 di sini..."></div>
+  </section>
+
+  <section class="card page-block" id="final-template" style="margin-top:18px;">
+    <h2>Template Jawaban Akhir Peserta</h2>
+    <table><thead><tr><th>Komponen</th><th>Isi Jawaban Peserta</th></tr></thead><tbody>
+      <tr><td>Diagnosis utama</td><td>Apa penyebab utama stagnasi penjualan?</td></tr>
+      <tr><td>Area/segmen prioritas</td><td>Area dan segmen mana yang perlu difokuskan?</td></tr>
+      <tr><td>Root cause utama</td><td>Akar masalah apa yang paling recoverable?</td></tr>
+      <tr><td>Program prioritas</td><td>Dua atau tiga intervensi yang direkomendasikan.</td></tr>
+      <tr><td>Dampak simulasi</td><td>Tambahan GWh, revenue, gap closed, dan achievement setelah intervensi.</td></tr>
+      <tr><td>Risiko/asumsi</td><td>Prasyarat implementasi atau risiko yang perlu dikendalikan.</td></tr>
+    </tbody></table>
+    <div class="notes" contenteditable="true" data-note-id="final" data-placeholder="Tulis rekomendasi akhir Anda di sini..."></div>
+  </section>
+  <div class="footer">Participant Guide · Case #1 Final Dashboard · PLN BI Training</div>
+</main>
+
+<script>
+function saveNotes(){document.querySelectorAll('[contenteditable][data-note-id]').forEach(el=>localStorage.setItem('case1_'+el.dataset.noteId, el.innerHTML));}
+function loadNotes(){document.querySelectorAll('[contenteditable][data-note-id]').forEach(el=>{const v=localStorage.getItem('case1_'+el.dataset.noteId); if(v){el.innerHTML=v;}});}
+function clearNotes(){if(confirm('Hapus semua catatan pada halaman ini?')){document.querySelectorAll('[contenteditable][data-note-id]').forEach(el=>{el.innerHTML='';localStorage.removeItem('case1_'+el.dataset.noteId);});}}
+window.addEventListener('load',()=>{loadNotes();document.querySelectorAll('[contenteditable][data-note-id]').forEach(el=>el.addEventListener('input',saveNotes));});
+</script>
+
+</body>
+</html>

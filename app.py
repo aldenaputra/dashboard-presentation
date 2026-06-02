@@ -1,4 +1,11 @@
+import base64
+import mimetypes
+import os
+import re
+from pathlib import Path
+
 import streamlit as st
+import streamlit.components.v1 as components
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
@@ -9,13 +16,142 @@ from sklearn.linear_model import LinearRegression
 # PAGE CONFIGURATION
 # ==========================================
 st.set_page_config(page_title="PLN BI Dashboard", layout="wide")
-st.title("⚡ PLN Business Intelligence Dashboard")
-
 # Customizing Plotly layout for 1920x1080 PPT fitting
 PPT_WIDTH = 1920
 PPT_HEIGHT = 1080
 PPT_MARGINS = dict(l=50, r=50, t=80, b=50)
 TEMPLATE = "plotly_white"
+
+BASE_DIR = Path(__file__).resolve().parent
+
+GUIDE_OPTIONS = {
+    "Case 1 - Sales Growth": {
+        "Participant Guide": BASE_DIR / "HTML Guide" / "pln_case1_html_guides_final" / "PLN_Case1_Participant_Guide_FinalDashboard.html",
+        "Trainer Guide": BASE_DIR / "HTML Guide" / "pln_case1_html_guides_final" / "PLN_Case1_Trainer_Facilitation_Guide_FinalDashboard.html",
+    },
+    "Case 2 - Profitability": {
+        "Participant Guide": BASE_DIR / "HTML Guide" / "pln_case2_html_guides_final" / "PLN_Case2_Participant_Guide_FinalDashboard.html",
+        "Trainer Guide": BASE_DIR / "HTML Guide" / "pln_case2_html_guides_final" / "PLN_Case2_Trainer_Facilitation_Guide_FinalDashboard.html",
+    },
+}
+
+
+def get_trainer_password():
+    configured_password = os.getenv("TRAINER_PASSWORD")
+    try:
+        configured_password = configured_password or st.secrets.get("TRAINER_PASSWORD")
+        configured_password = configured_password or st.secrets.get("trainer_password")
+    except Exception:
+        pass
+
+    return configured_password or "trainer123"
+
+
+def inline_html_assets(html, html_path):
+    html_dir = html_path.parent
+
+    def replace_src(match):
+        prefix, quote, src, suffix = match.groups()
+        src_value = src.strip()
+
+        if (
+            src_value.startswith(("data:", "http://", "https://", "#"))
+            or src_value.startswith("/")
+            or ".." in Path(src_value).parts
+        ):
+            return match.group(0)
+
+        asset_path = (html_dir / src_value).resolve()
+        if not asset_path.exists() or html_dir.resolve() not in asset_path.parents:
+            return match.group(0)
+
+        mime_type = mimetypes.guess_type(asset_path.name)[0] or "application/octet-stream"
+        encoded = base64.b64encode(asset_path.read_bytes()).decode("ascii")
+        return f"{prefix}{quote}data:{mime_type};base64,{encoded}{suffix}"
+
+    return re.sub(r'(<img\b[^>]*?\bsrc=)(["\'])(.*?)(\2)', replace_src, html, flags=re.IGNORECASE)
+
+
+def rewrite_internal_anchor_links(html):
+    def replace_anchor(match):
+        attrs = match.group(1) + match.group(4)
+        target = match.group(3)
+        label = match.group(5)
+        attrs = re.sub(r'\s*href=(["\'])#.*?\1', "", attrs, flags=re.IGNORECASE)
+        return f'<button type="button"{attrs} onclick="scrollToGuideSection(\'{target}\')">{label}</button>'
+
+    html = re.sub(
+        r'<a\b([^>]*?)\s+href=(["\'])#([A-Za-z][\w:-]*)\2([^>]*)>(.*?)</a>',
+        replace_anchor,
+        html,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+    helper_script = """
+<script>
+function scrollToGuideSection(id){
+  var target = document.getElementById(id);
+  if(target){target.scrollIntoView({behavior:'smooth', block:'start'});}
+}
+</script>
+"""
+    return html.replace("</body>", helper_script + "\n</body>")
+
+
+@st.cache_data(show_spinner=False)
+def load_guide_html(html_path_text, file_mtime_ns):
+    html_path = Path(html_path_text)
+    html = html_path.read_text(encoding="utf-8")
+    html = inline_html_assets(html, html_path)
+    return rewrite_internal_anchor_links(html)
+
+
+def trainer_is_verified():
+    return st.session_state.get("trainer_verified", False)
+
+
+def render_trainer_verification():
+    st.info("Trainer guide requires authorization before it can be displayed.")
+
+    with st.form("trainer_password_form"):
+        password = st.text_input("Trainer password", type="password")
+        submitted = st.form_submit_button("Verify access")
+
+    if submitted:
+        if password == get_trainer_password():
+            st.session_state.trainer_verified = True
+            st.rerun()
+        else:
+            st.error("Password is incorrect. Please check with the authorized trainer.")
+
+
+def render_power_bi_training_page():
+    st.title("Power BI Training Guides")
+
+    with st.sidebar:
+        st.divider()
+        st.subheader("Training Guide")
+        selected_case = st.selectbox("Case", list(GUIDE_OPTIONS.keys()))
+        selected_guide = st.radio("Guide type", ["Participant Guide", "Trainer Guide"])
+
+        if selected_guide == "Trainer Guide" and trainer_is_verified():
+            if st.button("Lock trainer guide"):
+                st.session_state.trainer_verified = False
+                st.rerun()
+
+    html_path = GUIDE_OPTIONS[selected_case][selected_guide]
+
+    if not html_path.exists():
+        st.error(f"Guide file was not found: {html_path}")
+        return
+
+    if selected_guide == "Trainer Guide" and not trainer_is_verified():
+        render_trainer_verification()
+        return
+
+    st.caption(f"{selected_case} / {selected_guide}")
+    guide_html = load_guide_html(str(html_path), html_path.stat().st_mtime_ns)
+    components.html(guide_html, height=1100, scrolling=True)
 
 # ==========================================
 # DATA GENERATION (Cached for performance)
@@ -69,7 +205,17 @@ def generate_data():
 
     return df, pd.DataFrame(cause_rows)
 
+
+with st.sidebar:
+    st.title("PLN BI Training")
+    page = st.radio("Page", ["Dashboard Examples", "Power BI Training"])
+
+if page == "Power BI Training":
+    render_power_bi_training_page()
+    st.stop()
+
 df, df_cause = generate_data()
+st.title("⚡ PLN Business Intelligence Dashboard")
 
 # ==========================================
 # UI TABS SETUP
